@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using RegistrarGradeManager.Models;
+// using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace RegistrarGradeManager.Systems
 {
