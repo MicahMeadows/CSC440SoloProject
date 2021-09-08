@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RegistrarGradeManager.Models
 {
-    class StudentModel
+    public class StudentModel
     {
         private string _studentID;
         private string _studentName;

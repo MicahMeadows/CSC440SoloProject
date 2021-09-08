@@ -1,37 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RegistrarGradeManager.Models;
 
 namespace RegistrarGradeManager.Systems
 {
 
-    public class Report
-    {
-        private Student student;
-        private List<CourseModel> _courseRecords;
-    }
-
-    public interface IReportStrategy
-    {
-        Report GenerateReport(StudentModel student);
-    }
-
-    public class ConsoleTranscriptStrategy : IReportStrategy
-    {
-        public Report GenerateReport(StudentModel student)
-        {
-            // 
-            throw new NotImplementedException();
-        }
-    }
-
-    public class ReportGenerator
-    {
-        public Report GenerateReport(StudentModel student, IReportStrategy reportStrategy)
-        {
-            return reportStrategy.GenerateReport(student);
-        }
-    }
+    // import record files
+    // add individual record
+    // delete record
+    // edit record
+    // print transcript
+    // print report card
 
     public class CourseRecordManager
     {
@@ -39,8 +17,7 @@ namespace RegistrarGradeManager.Systems
         private ICourseRecordDatabaseManager destinationCourseRecordDatabaseManager;
         private ReportGenerator reportGenerator;
 
-        public CourseRecordManager(
-            ICourseRecordDatabaseManager sourceCourseRecordDatabaseManager,
+        public CourseRecordManager(ICourseRecordDatabaseManager sourceCourseRecordDatabaseManager, 
             ICourseRecordDatabaseManager destinationCourseRecordDatabaseManager,
             ReportGenerator reportGenerator)
         {
@@ -48,13 +25,6 @@ namespace RegistrarGradeManager.Systems
             this.destinationCourseRecordDatabaseManager = destinationCourseRecordDatabaseManager;
             this.reportGenerator = reportGenerator;
         }
-
-        // import record files
-        // add individual record
-        // delete record
-        // edit record
-        // print transcript
-        // print report card
 
         public void ImportRecords()
         {
