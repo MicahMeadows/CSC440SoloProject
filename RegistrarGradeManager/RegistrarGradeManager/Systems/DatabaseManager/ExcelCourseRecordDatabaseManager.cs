@@ -56,27 +56,11 @@ namespace RegistrarGradeManager.Systems
 
         public void Add(CourseModel courseToAdd)
         {
-            if (this.GetRecordExists(courseToAdd))
-            {
-                // record already exists do something
-            }
-            else
-            {
-                // add record into excel sheet
-            }
             throw new NotImplementedException();
         }
 
         public void Delete(CourseModel courseToDelete)
         {
-            if (this.GetRecordExists(courseToDelete))
-            {
-                // delete record
-            }
-            else
-            {
-                // cant delete record because it doesnt exist
-            }
             throw new NotImplementedException();
         }
 
@@ -102,28 +86,24 @@ namespace RegistrarGradeManager.Systems
 
         public List<CourseModel> GetList(CourseModel filter)
         {
-            this.OpenExcelFile(path);
-
             List<CourseModel> retreivedRecords = new List<CourseModel>();
 
-            string fileName = excelWorkbook.Name;
-            fileName = fileName.Substring(0, fileName.Length - 5);
+            this.OpenExcelFile(path);
 
+            string[] fileNameDisect = SplitFileNameIntoData();
 
-            string[] fileNameDisect = fileName.Split(' ');
-
-            string coursePrefix = fileNameDisect[0];
-            int courseNum = int.Parse(fileNameDisect[1]);
-            int year = int.Parse(fileNameDisect[2]);
-            string semester = fileNameDisect[3];
+            string coursePrefixFromFileName = fileNameDisect[0];
+            int courseNumFromFileName       = int.Parse(fileNameDisect[1]);
+            int yearFromFileName            = int.Parse(fileNameDisect[2]);
+            string semesterFromFileName     = fileNameDisect[3];
 
             for (int row = 2; row < excelRange.Rows.Count + 1; row++)
             {
                 string studentID = excelRange[row, 2].Value2.ToString();
                 string grade = excelRange[row, 3].Value2.ToString();
 
-                CourseModel retreivedCourseRecord = 
-                    new CourseModel(studentID, coursePrefix, courseNum, grade, year, semester);
+                CourseModel retreivedCourseRecord =
+                    new CourseModel(studentID, coursePrefixFromFileName, courseNumFromFileName, grade, yearFromFileName, semesterFromFileName);
 
                 retreivedRecords.Add(retreivedCourseRecord);
             }
@@ -131,6 +111,14 @@ namespace RegistrarGradeManager.Systems
             this.CloseExcelFile();
 
             return retreivedRecords;
+        }
+
+        private string[] SplitFileNameIntoData()
+        {
+            string fileName = excelWorkbook.Name;
+            fileName = fileName.Substring(0, fileName.Length - 5);
+
+            return fileName.Split(' ');
         }
     }
 }
