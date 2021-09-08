@@ -1,0 +1,369 @@
+I-Logix-RPY-Archive version 8.5.2 Modeler C++ 1159120
+{ ISubsystem 
+	- _id = GUID e730fca6-c8f7-4a8a-9748-c27412a19783;
+	- _myState = 8192;
+	- _name = "Default";
+	- _objectCreation = "9283008302021113137099";
+	- _umlDependencyID = "2192";
+	- _lastID = 6;
+	- weakCGTime = 9.8.2021::15:28:8;
+	- strongCGTime = 9.8.2021::15:24:48;
+	- _defaultComposite = GUID 9e13518b-eb2b-40ca-88f9-432972ccb9fb;
+	- _eventsBaseID = -1;
+	- Classes = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IClass 
+			- _id = GUID 9e13518b-eb2b-40ca-88f9-432972ccb9fb;
+			- _myState = 40960;
+			- _name = "TopLevel";
+			- _objectCreation = "9283028302021113136899";
+			- _umlDependencyID = "2303";
+			- weakCGTime = 12.31.1969::19:0:0;
+			- strongCGTime = 12.31.1969::19:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- UseCases = { IRPYRawContainer 
+		- size = 5;
+		- value = 
+		{ IUseCase 
+			- _id = GUID 8b9784e1-e384-4551-b6c8-ae70ffc18345;
+			- _myState = 8192;
+			- _name = "Import course records from excel sheet";
+			- _objectCreation = "9283048302021113136699";
+			- _umlDependencyID = "5040";
+			- weakCGTime = 12.31.1969::19:0:0;
+			- strongCGTime = 12.31.1969::19:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 64889f12-0731-40c6-9e2b-48a5adb19159;
+					- _myState = 10240;
+					- _name = "itsUser";
+					- _objectCreation = "9283068302021113136499";
+					- _umlDependencyID = "2243";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IActor";
+						- _id = GUID 81cc6433-4f67-4017-b802-a9b3d58c36f9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 92c34cb6-e1c9-48a6-a114-6741e562db28;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+			- UseCaseStereoTypes = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _EntryPoints = { IRPYRawContainer 
+				- size = 0;
+			}
+		}
+		{ IUseCase 
+			- _id = GUID b6c2cfd5-3d4e-4988-8af6-50ea63bff0ab;
+			- _myState = 8192;
+			- _name = "Add individual records";
+			- _objectCreation = "9283088302021113136299";
+			- _umlDependencyID = "3576";
+			- weakCGTime = 12.31.1969::19:0:0;
+			- strongCGTime = 12.31.1969::19:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 86991fd9-51a3-43dc-8793-29023b801bdd;
+					- _myState = 10240;
+					- _name = "itsUser";
+					- _objectCreation = "9283108302021113136099";
+					- _umlDependencyID = "2234";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IActor";
+						- _id = GUID 81cc6433-4f67-4017-b802-a9b3d58c36f9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 6afbe7ff-76da-4b5b-9bd6-4c0c3fd322ba;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+			- UseCaseStereoTypes = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _EntryPoints = { IRPYRawContainer 
+				- size = 0;
+			}
+		}
+		{ IUseCase 
+			- _id = GUID e772bf95-c176-4c22-8d80-049b85f62b05;
+			- _myState = 8192;
+			- _name = "Edit individual records";
+			- _objectCreation = "9283128302021113135899";
+			- _umlDependencyID = "3701";
+			- weakCGTime = 12.31.1969::19:0:0;
+			- strongCGTime = 12.31.1969::19:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 4a948ba2-724a-443c-aa8e-66a30b60323d;
+					- _myState = 10240;
+					- _name = "itsUser";
+					- _objectCreation = "9283148302021113135699";
+					- _umlDependencyID = "2243";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IActor";
+						- _id = GUID 81cc6433-4f67-4017-b802-a9b3d58c36f9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID f4404068-fcd3-44fb-80d7-b8544c10b630;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+			- UseCaseStereoTypes = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _EntryPoints = { IRPYRawContainer 
+				- size = 0;
+			}
+		}
+		{ IUseCase 
+			- _id = GUID 12e9e7b0-06ed-400e-897a-69b4b4d3ac1a;
+			- _myState = 8192;
+			- _name = "Delete individual records";
+			- _objectCreation = "9283168302021113135499";
+			- _umlDependencyID = "3906";
+			- weakCGTime = 12.31.1969::19:0:0;
+			- strongCGTime = 12.31.1969::19:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID ce774a81-64fe-4ab1-964b-507e0562ac85;
+					- _myState = 10240;
+					- _name = "itsUser";
+					- _objectCreation = "9283188302021113135299";
+					- _umlDependencyID = "2243";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IActor";
+						- _id = GUID 81cc6433-4f67-4017-b802-a9b3d58c36f9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 438d338d-ce6a-4d75-a345-c5fe6a7f81be;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+			- UseCaseStereoTypes = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _EntryPoints = { IRPYRawContainer 
+				- size = 0;
+			}
+		}
+		{ IUseCase 
+			- _id = GUID 4bbf08dd-4337-4567-bb88-93fea0076b61;
+			- _myState = 8192;
+			- _name = "Print Reports";
+			- _objectCreation = "9283208302021113135099";
+			- _umlDependencyID = "2759";
+			- weakCGTime = 12.31.1969::19:0:0;
+			- strongCGTime = 12.31.1969::19:0:0;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 1;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID ee63f17c-df02-4e5e-9c89-a7555d820286;
+					- _myState = 10240;
+					- _name = "itsUser";
+					- _objectCreation = "9283228302021113134899";
+					- _umlDependencyID = "2243";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IActor";
+						- _id = GUID 81cc6433-4f67-4017-b802-a9b3d58c36f9;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 751666f8-67c2-4009-894f-02968f50e686;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+			- UseCaseStereoTypes = { IRPYRawContainer 
+				- size = 0;
+			}
+			- _EntryPoints = { IRPYRawContainer 
+				- size = 0;
+			}
+		}
+	}
+	- Actors = { IRPYRawContainer 
+		- size = 1;
+		- value = 
+		{ IActor 
+			- _id = GUID 81cc6433-4f67-4017-b802-a9b3d58c36f9;
+			- _myState = 8192;
+			- _name = "User";
+			- _objectCreation = "9283248302021113134699";
+			- _umlDependencyID = "1907";
+			- weakCGTime = 9.8.2021::15:28:39;
+			- strongCGTime = 9.8.2021::15:25:31;
+			- _multiplicity = "";
+			- _itsStateChart = { IHandle 
+				- _m2Class = "";
+			}
+			- Associations = { IRPYRawContainer 
+				- size = 5;
+				- value = 
+				{ IAssociationEnd 
+					- _id = GUID 92c34cb6-e1c9-48a6-a114-6741e562db28;
+					- _myState = 10240;
+					- _name = "itsImport course records from excel sheet";
+					- _objectCreation = "9283268302021113134499";
+					- _umlDependencyID = "5376";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IUseCase";
+						- _id = GUID 8b9784e1-e384-4551-b6c8-ae70ffc18345;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 64889f12-0731-40c6-9e2b-48a5adb19159;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID 6afbe7ff-76da-4b5b-9bd6-4c0c3fd322ba;
+					- _myState = 10240;
+					- _name = "itsAdd individual records";
+					- _objectCreation = "9283288302021113134299";
+					- _umlDependencyID = "3912";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IUseCase";
+						- _id = GUID b6c2cfd5-3d4e-4988-8af6-50ea63bff0ab;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 86991fd9-51a3-43dc-8793-29023b801bdd;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID f4404068-fcd3-44fb-80d7-b8544c10b630;
+					- _myState = 10240;
+					- _name = "itsEdit individual records";
+					- _objectCreation = "9283308302021113134099";
+					- _umlDependencyID = "4028";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IUseCase";
+						- _id = GUID e772bf95-c176-4c22-8d80-049b85f62b05;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 4a948ba2-724a-443c-aa8e-66a30b60323d;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID 438d338d-ce6a-4d75-a345-c5fe6a7f81be;
+					- _myState = 10240;
+					- _name = "itsDelete individual records";
+					- _objectCreation = "9283328302021113133899";
+					- _umlDependencyID = "4242";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IUseCase";
+						- _id = GUID 12e9e7b0-06ed-400e-897a-69b4b4d3ac1a;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID ce774a81-64fe-4ab1-964b-507e0562ac85;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID 751666f8-67c2-4009-894f-02968f50e686;
+					- _myState = 10240;
+					- _name = "itsPrint Reports";
+					- _objectCreation = "9283348302021113133699";
+					- _umlDependencyID = "3104";
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IUseCase";
+						- _id = GUID 4bbf08dd-4337-4567-bb88-93fea0076b61;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID ee63f17c-df02-4e5e-9c89-a7555d820286;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+			}
+			- _classModifier = Unspecified;
+		}
+	}
+	- _configurationRelatedTime = 12.31.1969::19:0:0;
+}
+
