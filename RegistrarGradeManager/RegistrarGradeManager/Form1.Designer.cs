@@ -35,7 +35,7 @@ namespace RegistrarGradeManager
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(142, 62);
+            this.listBox1.Location = new System.Drawing.Point(196, 61);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(377, 264);
             this.listBox1.TabIndex = 0;
