@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using RegistrarGradeManager.Models;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace RegistrarGradeManager.Systems
 {
     public class SqlCourseRecordDatabaseManager : ICourseRecordDatabaseManager
     {
+        MySqlConnection sqlConnection = null;
+
+        public SqlCourseRecordDatabaseManager(string sqlConnectionString)
+        {
+            this.sqlConnection = new MySqlConnection(sqlConnectionString);
+        }
+
         public void Add(CourseModel courseToAdd)
         {
             if (this.GetRecordExists(courseToAdd))

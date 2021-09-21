@@ -8,7 +8,7 @@ namespace RegistrarGradeManager.Systems
 {
     public class ExcelCourseRecordDatabaseManager : ICourseRecordDatabaseManager
     {
-        string path = null;
+        string filePath = null;
 
         Excel.Application excelSandbox  = null;
         Excel.Workbook excelWorkbook    = null;
@@ -17,7 +17,7 @@ namespace RegistrarGradeManager.Systems
 
         public ExcelCourseRecordDatabaseManager(string path)
         {
-            this.path = path;
+            this.filePath = path;
         }
 
         private void OpenExcelFile(string path)
@@ -86,9 +86,9 @@ namespace RegistrarGradeManager.Systems
 
         public List<CourseModel> GetList(CourseModel filter)
         {
-            List<CourseModel> retreivedRecords = new List<CourseModel>();
+            var retreivedRecords = new List<CourseModel>();
 
-            this.OpenExcelFile(path);
+            this.OpenExcelFile(filePath);
 
             string[] fileNameDisect = SplitFileNameIntoData();
 
@@ -102,8 +102,14 @@ namespace RegistrarGradeManager.Systems
                 string studentID = excelRange[row, 2].Value2.ToString();
                 string grade = excelRange[row, 3].Value2.ToString();
 
-                CourseModel retreivedCourseRecord =
-                    new CourseModel(studentID, coursePrefixFromFileName, courseNumFromFileName, grade, yearFromFileName, semesterFromFileName);
+                CourseModel retreivedCourseRecord = new CourseModel(
+                    studentID,
+                    coursePrefixFromFileName,
+                    courseNumFromFileName,
+                    grade,
+                    yearFromFileName,
+                    semesterFromFileName
+                    );
 
                 retreivedRecords.Add(retreivedCourseRecord);
             }

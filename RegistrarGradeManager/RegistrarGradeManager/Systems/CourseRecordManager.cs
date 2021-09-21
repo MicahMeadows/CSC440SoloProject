@@ -17,6 +17,7 @@ namespace RegistrarGradeManager.Systems
         private ICourseRecordDatabaseManager destinationCourseRecordDatabaseManager;
         private ReportGenerator reportGenerator;
 
+
         public CourseRecordManager(ICourseRecordDatabaseManager sourceCourseRecordDatabaseManager, 
             ICourseRecordDatabaseManager destinationCourseRecordDatabaseManager,
             ReportGenerator reportGenerator)
