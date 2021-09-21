@@ -6,4 +6,26 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="arrow-left-circle.png" />
+    <None Remove="edit-record-icon.png" />
+    <None Remove="EKU_Logo.jpg" />
+    <None Remove="EKU_Logo.png" />
+    <None Remove="generate-report-icon.png" />
+    <None Remove="plus-circle %281%29.png" />
+    <None Remove="plus-circle.png" />
+    <None Remove="plus-circle.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="arrow-left-circle.png" />
+    <Resource Include="edit-record-icon.png" />
+    <Resource Include="EKU_Logo.jpg" />
+    <Resource Include="EKU_Logo.png" />
+    <Resource Include="generate-report-icon.png" />
+    <Resource Include="plus-circle (1).png" />
+    <Resource Include="plus-circle.png" />
+    <Resource Include="plus-circle.svg" />
+  </ItemGroup>
+
 </Project>
