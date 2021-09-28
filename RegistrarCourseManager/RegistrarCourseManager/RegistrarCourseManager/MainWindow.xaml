@@ -6,182 +6,77 @@
     xmlns:local="clr-namespace:RegistrarCourseManager"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
-    Width="800"
-    Height="450"
+    Width="1000"
+    Height="600"
+    AllowsTransparency="True"
+    ResizeMode="CanResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
     mc:Ignorable="d">
 
-    <Grid Background="#FF882B46">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height=".075*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="243*" />
-            <ColumnDefinition Width="557*" />
-        </Grid.ColumnDefinitions>
-
-
-        <Grid
-            x:Name="pageTabs"
-            Grid.RowSpan="3"
-            Margin="0,87,0,0"
-            Background="#FF882B46">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="1.5*" />
-            </Grid.RowDefinitions>
-
-
-
-            <StackPanel Grid.Row="0">
-
-                <Button Background="#FFA96767" BorderThickness="0,0,0,0">
-                    <StackPanel Orientation="Horizontal">
-
-                        <Image
-                            Width="61"
-                            RenderTransformOrigin="0.5,0.5"
-                            Source="/plus-circle (1).png"
-                            Stretch="None">
-                            <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
-                                    <SkewTransform />
-                                    <RotateTransform />
-                                    <TranslateTransform />
-                                </TransformGroup>
-                            </Image.RenderTransform>
-                        </Image>
-
-                        <Label
-                            Width="181"
-                            VerticalAlignment="Center"
-                            Content="Add Record"
-                            FontFamily="Segoe UI Light"
-                            FontSize="20"
-                            FontWeight="Normal"
-                            Foreground="White" />
-                    </StackPanel>
-                </Button>
-                <Button Background="#FF882B46" BorderThickness="0,0,0,0">
-                    <StackPanel Orientation="Horizontal">
-
-                        <Image
-                            Width="61"
-                            RenderTransformOrigin="0.5,0.5"
-                            Source="/edit-record-icon.png"
-                            Stretch="None">
-                            <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
-                                    <SkewTransform />
-                                    <RotateTransform />
-                                    <TranslateTransform />
-                                </TransformGroup>
-                            </Image.RenderTransform>
-                        </Image>
-
-                        <Label
-                            Width="182"
-                            VerticalAlignment="Center"
-                            Background="#00882B46"
-                            Content="Edit Record"
-                            FontFamily="Segoe UI Light"
-                            FontSize="20"
-                            FontWeight="Normal"
-                            Foreground="White" />
-                    </StackPanel>
-                </Button>
-                <Button Background="#FF882B46" BorderThickness="0,0,0,0">
-                    <StackPanel Orientation="Horizontal">
-
-                        <Image
-                            Width="61"
-                            RenderTransformOrigin="0.5,0.5"
-                            Source="/generate-report-icon.png"
-                            Stretch="None">
-                            <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
-                                    <SkewTransform />
-                                    <RotateTransform />
-                                    <TranslateTransform />
-                                </TransformGroup>
-                            </Image.RenderTransform>
-                        </Image>
-
-                        <Label
-                            Width="181"
-                            VerticalAlignment="Center"
-                            Background="#00882B46"
-                            Content="Generate Report"
-                            FontFamily="Segoe UI Light"
-                            FontSize="20"
-                            FontWeight="Normal"
-                            Foreground="White" />
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-            <Button
-                Grid.Row="3"
-                Width="86"
-                Height="27"
-                Background="#FFA96767"
-                Content="Logout"
-                FontFamily="Segoe UI Light"
-                FontSize="14"
-                FontStyle="Normal"
-                Foreground="White" />
-
-
-        </Grid>
-        <Image
+        <Rectangle
             Grid.Row="0"
-            Grid.Column="0"
-            Margin="0,0,0,47"
-            Source="/EKU_Logo.png" />
+            Panel.ZIndex="999"
+            Fill="Transparent"
+            MouseDown="MainWindow_MouseDown" />
 
-
-
-        <Grid
-            Grid.RowSpan="3"
+        <StackPanel
             Grid.Column="1"
-            Margin="0,87,0,0"
-            Background="White">
-            <Label>test</Label>
-        </Grid>
-
-        <Grid
-            Grid.Column="1"
-            Width="149"
-            Height="37"
-            Margin="388,0,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Panel.ZIndex="1000"
+            Orientation="Horizontal">
             <Button
-                Grid.Column="0"
-                Height="36"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Background="#00DDDDDD"
-                BorderBrush="#00707070">
-                <Image Source="/arrow-left-circle.png" />
+                Name="ButtonMinimize"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Click="ButtonMinimize_Click">
+                <Image
+                    Width="19"
+                    Height="19"
+                    RenderTransformOrigin="0.5,0.5"
+                    Source="/minus.png">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            <SkewTransform />
+                            <RotateTransform Angle="0" />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
             </Button>
-            <Label
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="Add Record"
-                FontSize="20"
-                Foreground="white" />
-        </Grid>
+            <Button
+                x:Name="ButtonExit"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Click="ButtonExit_Click">
+                <Image
+                    Width="25"
+                    Height="20"
+                    RenderTransformOrigin="0.5,0.5"
+                    Source="/x.png">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </Button>
+        </StackPanel>
 
+        <Frame Grid.RowSpan="2" Source="LoginPage.xaml" />
     </Grid>
+
+
+
+
 </Window>

@@ -7,25 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="add-record-icon.png" />
     <None Remove="arrow-left-circle.png" />
     <None Remove="edit-record-icon.png" />
-    <None Remove="EKU_Logo.jpg" />
+    <None Remove="EeasternKentuckyUniversity.png" />
     <None Remove="EKU_Logo.png" />
     <None Remove="generate-report-icon.png" />
-    <None Remove="plus-circle %281%29.png" />
-    <None Remove="plus-circle.png" />
-    <None Remove="plus-circle.svg" />
+    <None Remove="GithubLogo.png" />
+    <None Remove="minus.png" />
+    <None Remove="x.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="add-record-icon.png" />
     <Resource Include="arrow-left-circle.png" />
     <Resource Include="edit-record-icon.png" />
-    <Resource Include="EKU_Logo.jpg" />
+    <Resource Include="EeasternKentuckyUniversity.png" />
     <Resource Include="EKU_Logo.png" />
     <Resource Include="generate-report-icon.png" />
-    <Resource Include="plus-circle (1).png" />
-    <Resource Include="plus-circle.png" />
-    <Resource Include="plus-circle.svg" />
+    <Resource Include="GithubLogo.png" />
+    <Resource Include="minus.png" />
+    <Resource Include="x.png" />
   </ItemGroup>
 
 </Project>
