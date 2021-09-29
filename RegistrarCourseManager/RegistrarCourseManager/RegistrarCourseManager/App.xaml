@@ -7,7 +7,5 @@
     <Application.Resources>
         <SolidColorBrush x:Key="maroonBackground" Color="#4C151E" />
         <SolidColorBrush x:Key="secondaryColor" Color="#A96767" />
-
-
     </Application.Resources>
 </Application>

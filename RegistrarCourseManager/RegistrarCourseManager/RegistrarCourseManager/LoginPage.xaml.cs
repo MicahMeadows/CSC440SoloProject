@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System;
 
 namespace RegistrarCourseManager
 {
@@ -24,33 +25,11 @@ namespace RegistrarCourseManager
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
 
-        private void TextBox_Click(object sender, RoutedEventArgs e)
+        private void LoginSubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            string textBoxText = textBox.Text;
+            ApplicationLanding applicationLandingPage = new ApplicationLanding();
 
-            if(textBoxText.ToLower() == "username" || textBoxText.ToLower() == "password")
-            {
-                textBox.Text = "";
-            }
-        }
-        private void PasswordTextBox_Leave(object sender, RoutedEventArgs e)
-        {
-            TextBox passwordTextBox = sender as TextBox;
-
-            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
-            {
-                passwordTextBox.Text = "Password";
-            }
-        }
-        private void UsernameTextBox_Leave(object sender, RoutedEventArgs e)
-        {
-            TextBox usernameTextBox = sender as TextBox;
-
-            if (string.IsNullOrWhiteSpace(usernameTextBox.Text))
-            {
-                usernameTextBox.Text = "Username";
-            }
+            this.NavigationService.Navigate(applicationLandingPage);
         }
     }
 }

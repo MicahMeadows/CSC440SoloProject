@@ -8,15 +8,16 @@
     Title="MainWindow"
     Width="1000"
     Height="600"
+    MinWidth="800"
+    MinHeight="480"
     AllowsTransparency="True"
-    ResizeMode="CanResize"
+    ResizeMode="CanResizeWithGrip"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
-
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".075*" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Rectangle
@@ -40,7 +41,7 @@
                     Width="19"
                     Height="19"
                     RenderTransformOrigin="0.5,0.5"
-                    Source="/minus.png">
+                    Source="Images/minimize-icon.png">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1" ScaleY="1" />
@@ -60,7 +61,7 @@
                     Width="25"
                     Height="20"
                     RenderTransformOrigin="0.5,0.5"
-                    Source="/x.png">
+                    Source="Images/suspend-icon.png">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleY="1" />
@@ -73,7 +74,11 @@
             </Button>
         </StackPanel>
 
-        <Frame Grid.RowSpan="2" Source="LoginPage.xaml" />
+        <Frame
+            x:Name="frameMainWindowContent"
+            Grid.RowSpan="2"
+            NavigationUIVisibility="Hidden"
+            Source="LoginPage.xaml" />
     </Grid>
 
 

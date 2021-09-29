@@ -1,6 +1,7 @@
 ﻿using System.Windows;
-using System.Windows.Media;
 using System.Windows.Input;
+using System.Windows.Navigation;
+using System;
 
 namespace RegistrarCourseManager
 {
@@ -14,6 +15,8 @@ namespace RegistrarCourseManager
         public MainWindow()
         {
             InitializeComponent();
+
+            // LoginPage loginPage = new LoginPage(this);
 
         }
 
@@ -34,5 +37,6 @@ namespace RegistrarCourseManager
                 this.DragMove();
             }
         }
+
     }
 }

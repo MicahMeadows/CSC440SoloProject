@@ -9,11 +9,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ApplicationLanding.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="LoginPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ApplicationLanding.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginPage.xaml">
       <SubType>Designer</SubType>
     </Page>

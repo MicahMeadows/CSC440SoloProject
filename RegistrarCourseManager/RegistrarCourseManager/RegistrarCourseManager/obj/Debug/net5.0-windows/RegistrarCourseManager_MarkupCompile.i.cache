@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\App.xaml
-2-1789095670
+3-1182657245
 
-61003167264
+7976268147
 193-1891726104
-LoginPage.xaml;MainWindow.xaml;
+ApplicationLanding.xaml;LoginPage.xaml;MainWindow.xaml;
 
-True
+False
 

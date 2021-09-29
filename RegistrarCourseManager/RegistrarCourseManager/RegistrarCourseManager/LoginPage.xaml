@@ -11,6 +11,46 @@
     Background="White"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style x:Key="RoundOutlineButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="border"
+                            BorderBrush="White"
+                            BorderThickness="1"
+                            CornerRadius="15">
+
+                            <ContentPresenter
+                                x:Name="PART_Content"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                TextElement.Foreground="{TemplateBinding Foreground}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White" />
+                                <Setter Property="Foreground" Value="{StaticResource maroonBackground}" />
+                                <Setter TargetName="border" Property="Background" Value="White" />
+                                <Setter TargetName="border" Property="BorderThickness" Value="0" />
+                                <Setter Property="RenderTransformOrigin" Value=".5, .5" />
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid x:Name="mainWindowGrid">
 
@@ -21,55 +61,25 @@
 
 
 
-        <Grid Grid.RowSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="4*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height=".5*" />
-            </Grid.RowDefinitions>
+        <Image
+            Grid.ColumnSpan="2"
+            Source="Images/login-background.png"
+            Stretch="Fill">
+            <Image.Effect>
+                <BlurEffect KernelType="Gaussian" Radius="12" />
+            </Image.Effect>
+        </Image>
 
-            <Image
-                Grid.Row="1"
-                Margin="0,25"
-                RenderOptions.BitmapScalingMode="HighQuality"
-                Source="/EeasternKentuckyUniversity.png"
-                StretchDirection="Both"
-                UseLayoutRounding="False" />
-
-            <StackPanel
-                Grid.Row="2"
-                VerticalAlignment="Center"
-                Background="Transparent">
-
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontSize="14"
-                    FontWeight="Light"
-                    TextAlignment="Center">
-                    CSC 440 Registrar Course<LineBreak />
-                    Record Management System<LineBreak />
-                    Fall Semester 2021</TextBlock>
-
-                <StackPanel
-                    Margin="20"
-                    HorizontalAlignment="Center"
-                    Orientation="Horizontal">
-                    <Image
-                        Width="15"
-                        Margin="0,0,3,0"
-                        Source="/GithubLogo.png" />
-                    <TextBlock FontWeight="Bold">MicahMeadows</TextBlock>
-                </StackPanel>
-            </StackPanel>
-
-        </Grid>
+        <Image
+            MaxWidth="250"
+            RenderOptions.BitmapScalingMode="HighQuality"
+            Source="/Images/eku-big-e.png" />
 
         <Rectangle
             Grid.RowSpan="2"
             Grid.Column="1"
-            Fill="{StaticResource maroonBackground}">
+            Fill="{StaticResource maroonBackground}"
+            Opacity=".94">
             <Rectangle.Effect>
                 <DropShadowEffect
                     BlurRadius="8"
@@ -93,59 +103,56 @@
                 Text="Login" />
             <Border
                 Width="256"
-                Height="50"
-                Margin="5"
-                Background="{StaticResource secondaryColor}"
-                BorderThickness="1"
-                CornerRadius="2">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="4"
-                        Opacity=".25"
-                        ShadowDepth="4" />
-                </Border.Effect>
-                <TextBox
-                    Margin="20,0"
-                    VerticalAlignment="Center"
-                    Background="Transparent"
-                    BorderThickness="0"
-                    FontSize="18"
-                    FontWeight="Light"
-                    Foreground="White"
-                    GotFocus="TextBox_Click"
-                    LostFocus="UsernameTextBox_Leave"
-                    Text="Username"
-                    TextAlignment="Center" />
+                Margin="0,5"
+                BorderBrush="White"
+                BorderThickness="0,0,0,1">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <Label
+                        Padding="0"
+                        HorizontalAlignment="Stretch"
+                        Background="#00000000"
+                        Content="Username"
+                        DockPanel.Dock="Bottom"
+                        FontSize="12"
+                        FontWeight="Light"
+                        Foreground="White" />
+                    <TextBox
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        DockPanel.Dock="Bottom"
+                        FontSize="18"
+                        FontWeight="UltraLight"
+                        Foreground="White"
+                        TextAlignment="Left" />
+                </StackPanel>
             </Border>
             <Border
                 Width="256"
-                Height="50"
-                Margin="5"
-                AutomationProperties.HelpText="Password"
-                Background="{StaticResource secondaryColor}"
-                BorderThickness="1"
-                CornerRadius="2">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="4"
-                        Opacity=".25"
-                        ShadowDepth="4" />
-                </Border.Effect>
-                <TextBox
-                    Margin="20,0"
-                    VerticalAlignment="Center"
-                    Background="Transparent"
-                    BorderThickness="0"
-                    FontSize="18"
-                    FontWeight="Light"
-                    Foreground="White"
-                    GotFocus="TextBox_Click"
-                    LostFocus="PasswordTextBox_Leave"
-                    Text="Password"
-                    TextAlignment="Center" />
+                Margin="0,10,0,0"
+                BorderBrush="White"
+                BorderThickness="0,0,0,1">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <Label
+                        Padding="0"
+                        Background="#00000000"
+                        Content="Password"
+                        FontSize="12"
+                        FontWeight="Light"
+                        Foreground="White" />
+                    <PasswordBox
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="18"
+                        FontWeight="UltraLight"
+                        Foreground="White" />
+                </StackPanel>
             </Border>
+
             <DockPanel
                 Width="256"
+                Margin="0,30,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
 
@@ -159,31 +166,16 @@
                     FontSize="14"
                     FontWeight="Light"
                     Foreground="White" />
-                <Border
+
+
+                <Button
                     Width="100"
-                    Height="40"
-                    Margin="0,10"
+                    Height="28"
                     HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
-                    Background="{StaticResource secondaryColor}"
-                    CornerRadius="2"
-                    DockPanel.Dock="Right">
-                    <Border.Effect>
-                        <DropShadowEffect
-                            BlurRadius="4"
-                            Opacity=".25"
-                            ShadowDepth="4" />
-                    </Border.Effect>
-                    <Button
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        Content="Login"
-                        FontSize="14"
-                        FontWeight="Light"
-                        Foreground="White" />
-
-                </Border>
-
+                    Click="LoginSubmitButton_Click"
+                    Content="Submit"
+                    Cursor="Hand"
+                    Style="{StaticResource RoundOutlineButton}" />
             </DockPanel>
         </StackPanel>
 
