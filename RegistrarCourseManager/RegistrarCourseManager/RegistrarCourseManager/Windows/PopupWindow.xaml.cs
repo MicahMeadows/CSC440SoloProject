@@ -17,11 +17,19 @@ namespace RegistrarCourseManager.Windows
     /// <summary>
     /// Interaction logic for CourseWindow.xaml
     /// </summary>
-    public partial class CourseWindow : Window
+    public partial class PopupWindow : Window
     {
-        public CourseWindow()
+        public PopupWindow()
         {
             InitializeComponent();
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
         }
     }
 }

@@ -18,7 +18,7 @@
     <Compile Update="Pages\UploadRecordsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\CourseWindow.xaml.cs">
+    <Compile Update="Windows\PopupWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <Page Update="Pages\UploadRecordsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\CourseWindow.xaml">
+    <Page Update="Windows\PopupWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

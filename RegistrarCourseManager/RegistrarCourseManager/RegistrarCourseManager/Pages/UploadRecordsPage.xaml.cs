@@ -21,7 +21,7 @@ namespace RegistrarCourseManager.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CourseWindow popup = new CourseWindow();
+            PopupWindow popup = new PopupWindow();
             popup.ShowDialog();
         }
     }
