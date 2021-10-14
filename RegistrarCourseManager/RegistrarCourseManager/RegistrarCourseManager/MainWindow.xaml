@@ -78,7 +78,7 @@
             x:Name="frameMainWindowContent"
             Grid.RowSpan="2"
             NavigationUIVisibility="Hidden"
-            Source="LoginPage.xaml" />
+            Source="/Pages/LoginPage.xaml" />
     </Grid>
 
 

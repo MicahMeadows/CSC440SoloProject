@@ -63,7 +63,7 @@
 
         <Image
             Grid.ColumnSpan="2"
-            Source="Images/login-background.png"
+            Source="../Images/login-background.png"
             Stretch="Fill">
             <Image.Effect>
                 <BlurEffect KernelType="Gaussian" Radius="12" />
@@ -73,7 +73,7 @@
         <Image
             MaxWidth="250"
             RenderOptions.BitmapScalingMode="HighQuality"
-            Source="/Images/eku-big-e.png" />
+            Source="../Images/eku-big-e.png" />
 
         <Rectangle
             Grid.RowSpan="2"

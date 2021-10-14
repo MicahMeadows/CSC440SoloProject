@@ -18,9 +18,9 @@ namespace RegistrarCourseManager
     /// <summary>
     /// Interaction logic for ApplicationLanding.xaml
     /// </summary>
-    public partial class ApplicationLanding : Page
+    public partial class TabsPage : Page
     {
-        public ApplicationLanding()
+        public TabsPage()
         {
             InitializeComponent();
         }

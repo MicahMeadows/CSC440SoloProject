@@ -27,7 +27,7 @@ namespace RegistrarCourseManager
 
         private void LoginSubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            ApplicationLanding applicationLandingPage = new ApplicationLanding();
+            TabsPage applicationLandingPage = new TabsPage();
 
             this.NavigationService.Navigate(applicationLandingPage);
         }
