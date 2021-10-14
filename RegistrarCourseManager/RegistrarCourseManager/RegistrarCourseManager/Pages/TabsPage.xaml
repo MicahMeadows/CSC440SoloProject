@@ -51,7 +51,8 @@
                     Margin="15"
                     BorderBrush="White"
                     BorderThickness="2"
-                    CornerRadius="50">
+                    CornerRadius="50"
+                    RenderOptions.BitmapScalingMode="HighQuality">
                     <Image VerticalAlignment="Center" Source="../Images/pfp-dog.png" />
                 </Border>
                 <Label
@@ -83,6 +84,7 @@
                         Grid.Column="0"
                         Margin="8"
                         VerticalAlignment="Center"
+                        RenderOptions.BitmapScalingMode="HighQuality"
                         Source="../Images/plus-circle.png" />
                     <Label
                         Grid.Column="1"

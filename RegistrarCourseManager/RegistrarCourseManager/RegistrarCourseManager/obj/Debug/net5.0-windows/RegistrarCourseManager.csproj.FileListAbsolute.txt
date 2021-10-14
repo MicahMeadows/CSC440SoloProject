@@ -27,3 +27,5 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\Pages\UploadRecordsPage.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\Pages\TabsPage.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\Pages\UploadRecordsPage.baml
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\Windows\CourseWindow.g.cs
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\Windows\CourseWindow.baml

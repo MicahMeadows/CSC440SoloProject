@@ -11,5 +11,11 @@
     Background="Green"
     mc:Ignorable="d">
 
-    <Grid />
+    <Grid>
+        <Button
+            Margin="339,225,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Test" Width="86" Click="Button_Click" RenderTransformOrigin="-19.363,-10.803" />
+    </Grid>
 </Page>
