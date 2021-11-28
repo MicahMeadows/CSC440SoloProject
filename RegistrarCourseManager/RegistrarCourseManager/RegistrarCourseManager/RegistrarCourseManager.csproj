@@ -28,4 +28,8 @@
     <Resource Include="Images\suspend-icon.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
 </Project>

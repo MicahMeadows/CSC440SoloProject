@@ -18,6 +18,15 @@
     <Compile Update="Pages\UploadRecordsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TabsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Tabs\UploadRecordsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\PopupWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +42,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\UploadRecordsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TabsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Tabs\UploadRecordsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PopupWindow.xaml">

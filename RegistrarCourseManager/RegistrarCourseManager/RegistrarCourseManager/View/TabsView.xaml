@@ -1,0 +1,128 @@
+﻿<UserControl
+    x:Class="RegistrarCourseManager.View.TabsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RegistrarCourseManager.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tabsView="clr-namespace:RegistrarCourseManager.View.Tabs"
+    xmlns:tabsViewmodel="clr-namespace:RegistrarCourseManager.ViewModel.Tabs"
+    xmlns:viewmodel="clr-namespace:RegistrarCourseManager.ViewModel"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewmodel:TabsViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type tabsViewmodel:UploadRecordsViewModel}">
+            <tabsView:UploadRecordsView />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid x:Name="gridLandingPageMain">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid
+            x:Name="gridNavigation"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Background="{StaticResource maroonBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.Effect>
+                <DropShadowEffect
+                    BlurRadius="5"
+                    Direction="0"
+                    Opacity=".25"
+                    ShadowDepth="3" />
+            </Grid.Effect>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+
+                <Border
+                    MaxHeight="50"
+                    Margin="15"
+                    BorderBrush="White"
+                    BorderThickness="2"
+                    CornerRadius="50"
+                    RenderOptions.BitmapScalingMode="HighQuality">
+                    <Image VerticalAlignment="Center" Source="../Images/pfp-dog.png" />
+                </Border>
+                <Label
+                    Grid.Column="1"
+                    Padding="0"
+                    VerticalAlignment="Center"
+                    Content="Micah Meadows"
+                    FontSize="20"
+                    FontWeight="Light"
+                    Foreground="White" />
+            </Grid>
+
+            <StackPanel x:Name="stackPanelNavigationTabs" Grid.Row="2">
+                <Grid
+                    Height="42"
+                    Margin="0,0,0,15"
+                    Background="{StaticResource secondaryColor}">
+                    <Grid.Effect>
+                        <DropShadowEffect
+                            BlurRadius="4"
+                            Direction="270"
+                            Opacity=".25" />
+                    </Grid.Effect>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.Column="0"
+                        Margin="8"
+                        VerticalAlignment="Center"
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        Source="../Images/plus-circle.png" />
+                    <Label
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Content="Upload Records"
+                        FontFamily="Segoe UI Light"
+                        FontSize="20"
+                        FontWeight="UltraLight"
+                        Foreground="White" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <DockPanel Grid.Row="0" Grid.Column="1">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Button
+                    Width="25"
+                    Height="25"
+                    Content="/-" />
+
+                <Label Content="Current Navigation" />
+            </StackPanel>
+        </DockPanel>
+
+        <ContentControl
+            Grid.Row="1"
+            Grid.Column="1"
+            Content="{Binding CurrentTabViewModel}" />
+    </Grid>
+</UserControl>
