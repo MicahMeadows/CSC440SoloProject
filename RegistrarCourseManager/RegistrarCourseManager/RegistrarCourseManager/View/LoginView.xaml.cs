@@ -24,5 +24,15 @@ namespace RegistrarCourseManager.View
         {
             InitializeComponent();
         }
+
+        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

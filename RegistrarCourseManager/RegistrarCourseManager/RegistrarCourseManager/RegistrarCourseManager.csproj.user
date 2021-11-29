@@ -9,15 +9,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\TabsPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\LoginPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\UploadRecordsPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -38,16 +29,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\TabsPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\LoginPage.xaml">
+    <Page Update="CustomControl\TabButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\UploadRecordsPage.xaml">
+    <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LoginView.xaml">

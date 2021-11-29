@@ -59,8 +59,6 @@
             <ColumnDefinition Width="4*" />
         </Grid.ColumnDefinitions>
 
-
-
         <Image
             Grid.ColumnSpan="2"
             Source="../Images/login-background.png"
@@ -172,9 +170,11 @@
                     Width="100"
                     Height="28"
                     HorizontalAlignment="Right"
+                    Click="Button_Click"
                     Command="{Binding LoginCommand}"
                     Content="Submit"
                     Cursor="Hand"
+                    MouseDown="Button_MouseDown"
                     Style="{StaticResource RoundOutlineButton}" />
             </DockPanel>
         </StackPanel>
