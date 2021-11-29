@@ -18,6 +18,12 @@
         <DataTemplate DataType="{x:Type tabsViewmodel:UploadRecordsViewModel}">
             <tabsView:UploadRecordsView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type tabsViewmodel:SettingsViewModel}">
+            <tabsView:SettingsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type tabsViewmodel:StudentSearchViewModel}">
+            <tabsView:StudentSearchView />
+        </DataTemplate>
     </UserControl.Resources>
     <Grid x:Name="gridLandingPageMain">
         <Grid.ColumnDefinitions>

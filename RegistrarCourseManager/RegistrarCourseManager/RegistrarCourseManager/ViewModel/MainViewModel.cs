@@ -27,7 +27,8 @@ namespace RegistrarCourseManager.ViewModel
             OpenLoginViewCommand = new BaseCommand(OpenLoginView);
             OpenTabsViewCommand = new BaseCommand(OpenTabsView);
 
-            OpenLoginViewCommand.Execute(null);
+            // OpenLoginViewCommand.Execute(null);
+            OpenTabsViewCommand.Execute(null);
         }
 
         private void OpenLoginView(object _)

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\App.xaml
-81522078230
+10-1924735873
 
-16-534647450
+20-1690066802
 193-1891726104
-MainWindow.xaml;Pages\LoginPage.xaml;Pages\TabsPage.xaml;Pages\UploadRecordsPage.xaml;View\LoginView.xaml;View\TabsView.xaml;View\Tabs\UploadRecordsView.xaml;Windows\PopupWindow.xaml;
+MainWindow.xaml;Pages\LoginPage.xaml;Pages\TabsPage.xaml;Pages\UploadRecordsPage.xaml;View\LoginView.xaml;View\TabsView.xaml;View\Tabs\SettingsView.xaml;View\Tabs\StudentSearchView.xaml;View\Tabs\UploadRecordsView.xaml;Windows\PopupWindow.xaml;
 
 False
 

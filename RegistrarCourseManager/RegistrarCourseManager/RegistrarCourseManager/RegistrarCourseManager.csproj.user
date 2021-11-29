@@ -24,6 +24,12 @@
     <Compile Update="View\TabsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Tabs\SettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Tabs\StudentSearchView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Tabs\UploadRecordsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +54,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\TabsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Tabs\SettingsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Tabs\StudentSearchView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Tabs\UploadRecordsView.xaml">

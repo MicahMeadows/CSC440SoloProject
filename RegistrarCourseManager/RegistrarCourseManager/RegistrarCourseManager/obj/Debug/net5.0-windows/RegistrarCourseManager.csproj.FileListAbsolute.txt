@@ -36,3 +36,7 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\TabsView.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\UploadRecordsView.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\UploadRecordsView.baml
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\SettingsView.g.cs
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\StudentSearchView.g.cs
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\SettingsView.baml
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\StudentSearchView.baml
