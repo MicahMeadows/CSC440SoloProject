@@ -85,17 +85,17 @@
                     Title="Upload Records"
                     Command="{Binding OpenUploadCourseRecordsTabCommand}"
                     IconPath="{Binding uploadRecordsImagePath}"
-                    Selected="{Binding CourseRecordUploadTabSelected}" />
+                    Selected="{Binding CourseRecordUploadTabSelected, Mode=TwoWay}" />
                 <custom:TabButton
                     Title="Student Search"
                     Command="{Binding OpenStudentSearchTabCommand}"
                     IconPath="{Binding studentSearchImagePath}"
-                    Selected="{Binding StudentSearchTabSelected}" />
+                    Selected="{Binding StudentSearchTabSelected, Mode=TwoWay}" />
                 <custom:TabButton
                     Title="Settings"
                     Command="{Binding OpenSettingsTabCommand}"
                     IconPath="{Binding settingsImagePath}"
-                    Selected="{Binding SettingsTabSelected}" />
+                    Selected="{Binding SettingsTabSelected, Mode=TwoWay}" />
             </StackPanel>
         </Grid>
 

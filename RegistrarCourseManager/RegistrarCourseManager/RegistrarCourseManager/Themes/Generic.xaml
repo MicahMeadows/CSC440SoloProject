@@ -1,10 +1,11 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:custom="clr-namespace:RegistrarCourseManager.CustomControl"
     xmlns:local="clr-namespace:RegistrarCourseManager.CustomControl">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/CustomControl/TabButtonStyle.xaml" />
+        <ResourceDictionary Source="CustomControl/TabButtonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

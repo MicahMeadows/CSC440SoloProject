@@ -7,16 +7,20 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:TabButton">
+
                     <Grid
                         x:Name="Grid_TabButton"
                         Height="42"
-                        Margin="0,0,0,15"
-                        Background="{Binding BackgroundBrush, RelativeSource={RelativeSource TemplatedParent}}">
+                        Margin="0,0,0,15">
+                        <Grid.Background>
+                            <SolidColorBrush x:Name="BackgroundColor" Color="Transparent" />
+                        </Grid.Background>
                         <Grid.Effect>
                             <DropShadowEffect
+                                x:Name="DropShadow"
                                 BlurRadius="4"
                                 Direction="270"
-                                Opacity="{Binding ShadowOpacity, RelativeSource={RelativeSource TemplatedParent}}" />
+                                Opacity=".25" />
                         </Grid.Effect>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
@@ -37,6 +41,40 @@
                             FontSize="20"
                             FontWeight="UltraLight"
                             Foreground="White" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup>
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetName="BackgroundColor"
+                                            Storyboard.TargetProperty="Color"
+                                            To="#A96767"
+                                            Duration="0:0:.25" />
+
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="DropShadow"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To=".25"
+                                            Duration="0:0:.25" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unselected">
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetName="BackgroundColor"
+                                            Storyboard.TargetProperty="Color"
+                                            To="Transparent"
+                                            Duration="0:0:0" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="DropShadow"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0" />
+
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
