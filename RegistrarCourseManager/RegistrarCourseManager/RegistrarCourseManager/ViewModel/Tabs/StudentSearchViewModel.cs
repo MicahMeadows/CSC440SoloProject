@@ -8,5 +8,6 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 {
     class StudentSearchViewModel : ViewModelBase
     {
+
     }
 }

@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:custom="clr-namespace:RegistrarCourseManager.CustomControl"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:RegistrarCourseManager.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:tabsView="clr-namespace:RegistrarCourseManager.View.Tabs"
     xmlns:tabsViewmodel="clr-namespace:RegistrarCourseManager.ViewModel.Tabs"
@@ -26,7 +25,7 @@
             <tabsView:StudentSearchView />
         </DataTemplate>
     </UserControl.Resources>
-    <Grid x:Name="gridLandingPageMain">
+    <Grid x:Name="gridLandingPageMain" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240" />
             <ColumnDefinition Width="*" />
@@ -104,12 +103,10 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <Button
-                    Width="25"
-                    Height="25"
-                    Content="/-" />
-
-                <Label Content="Current Navigation" />
+                <Label
+                    Content="Current Navigation"
+                    FontSize="24"
+                    FontWeight="Light" />
             </StackPanel>
         </DockPanel>
 

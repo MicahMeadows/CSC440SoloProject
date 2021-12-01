@@ -6,5 +6,53 @@
     <Application.Resources>
         <SolidColorBrush x:Key="maroonBackground" Color="#4C151E" />
         <SolidColorBrush x:Key="secondaryColor" Color="#A96767" />
+
+        <Style x:Key="PathListItem" TargetType="{x:Type Grid}" />
+
+        <Style x:Key="RoundButton" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="140" />
+            <Setter Property="Height" Value="35" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="border"
+                            Background="{DynamicResource secondaryColor}"
+                            BorderBrush="White"
+                            BorderThickness="0"
+                            CornerRadius="20">
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="4"
+                                    Opacity=".25"
+                                    ShadowDepth="4" />
+                            </Border.Effect>
+
+                            <ContentPresenter
+                                x:Name="PART_Content"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                TextElement.Foreground="{TemplateBinding Foreground}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter TargetName="border" Property="BorderThickness" Value="0" />
+                                <Setter Property="RenderTransformOrigin" Value=".5, .5" />
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

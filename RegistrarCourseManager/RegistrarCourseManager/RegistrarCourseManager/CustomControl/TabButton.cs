@@ -97,6 +97,18 @@ namespace RegistrarCourseManager.CustomControl
             Command.Execute(null);
         }
 
+        Cursor prevCursor;
+        void Mouse_Enter(object sender, RoutedEventArgs e)
+        {
+            prevCursor = Mouse.OverrideCursor;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        void Mouse_Leave(object sener, RoutedEventArgs e)
+        {
+            Mouse.OverrideCursor = prevCursor;
+        }
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -106,7 +118,11 @@ namespace RegistrarCourseManager.CustomControl
 
             var tabButton = GetTemplateChild("Grid_TabButton") as Grid;
             if (tabButton != null)
+            {
                 tabButton.MouseDown += Button_Click;
+                tabButton.MouseEnter += Mouse_Enter;
+                tabButton.MouseLeave += Mouse_Leave;
+            }
         }
     }
 }

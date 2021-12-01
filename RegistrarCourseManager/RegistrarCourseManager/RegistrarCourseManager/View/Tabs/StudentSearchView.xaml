@@ -5,9 +5,119 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:RegistrarCourseManager.View.Tabs"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodelTab="clr-namespace:RegistrarCourseManager.ViewModel.Tabs"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    Background="Red"
     mc:Ignorable="d">
-    <Grid />
+    <UserControl.DataContext>
+        <viewmodelTab:StudentSearchViewModel />
+    </UserControl.DataContext>
+    <Grid Margin="20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="73*" />
+            <RowDefinition Height="297*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.RowSpan="2" Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Margin="10"
+                Background="White"
+                BorderThickness="0"
+                CornerRadius="7">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="6"
+                        Direction="-90"
+                        Opacity=".25" />
+                </Border.Effect>
+                <DockPanel>
+                    <Border
+                        Background="{DynamicResource secondaryColor}"
+                        BorderThickness="0"
+                        CornerRadius="7"
+                        DockPanel.Dock="Top">
+                        <Border.Effect>
+                            <DropShadowEffect
+                                BlurRadius="4"
+                                Direction="-90"
+                                Opacity=".25"
+                                ShadowDepth="3" />
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Margin="10,0"
+                                VerticalAlignment="Center"
+                                Content="Students"
+                                DockPanel.Dock="Left"
+                                FontSize="18"
+                                FontWeight="Light"
+                                Foreground="White" />
+                            <Label
+                                Grid.Column="1"
+                                Margin="5,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Content="+"
+                                DockPanel.Dock="Right"
+                                FontSize="18"
+                                Foreground="white" />
+                        </Grid>
+                    </Border>
+
+                    <ListBox
+                        x:Name="ListBox_students"
+                        Grid.Column="0"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        ItemsSource="{Binding FilePath, Mode=TwoWay}"
+                        SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+                </DockPanel>
+
+            </Border>
+            <Border
+                Grid.Column="1"
+                Margin="10"
+                Background="White"
+                BorderThickness="0"
+                CornerRadius="7">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="6"
+                        Direction="-90"
+                        Opacity=".25" />
+                </Border.Effect>
+                <ListBox
+                    x:Name="ListBox_courses"
+                    Grid.Column="0"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    ItemsSource="{Binding FilePath, Mode=TwoWay}"
+                    SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+            </Border>
+        </Grid>
+
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                Content="Upload Files"
+                DockPanel.Dock="Right"
+                Style="{StaticResource RoundButton}" />
+        </Grid>
+    </Grid>
 </UserControl>

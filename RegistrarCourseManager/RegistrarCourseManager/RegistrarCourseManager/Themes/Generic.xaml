@@ -5,7 +5,8 @@
     xmlns:local="clr-namespace:RegistrarCourseManager.CustomControl">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="CustomControl/TabButtonStyle.xaml" />
+        <!--<ResourceDictionary Source="../CustomControl/TabButtonStyle.xaml" />-->
+        <ResourceDictionary Source="pack://application:,,,/RegistrarCourseManager;component/CustomControl/TabButtonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
