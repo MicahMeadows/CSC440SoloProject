@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\edit-pencil.png" />
     <None Remove="Images\eku-big-e.png" />
     <None Remove="Images\file-plus.png" />
     <None Remove="Images\login-background.png" />
@@ -15,9 +16,11 @@
     <None Remove="Images\plus-circle.png" />
     <None Remove="Images\profile-image-sample.png" />
     <None Remove="Images\suspend-icon.png" />
+    <None Remove="Images\user-plus.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\edit-pencil.png" />
     <Resource Include="Images\eku-big-e.png" />
     <Resource Include="Images\file-plus.png" />
     <Resource Include="Images\pfp-dog.png" />
@@ -26,10 +29,7 @@
     <Resource Include="Images\login-background.png" />
     <Resource Include="Images\minimize-icon.png" />
     <Resource Include="Images\suspend-icon.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Model\" />
+    <Resource Include="Images\user-plus.png" />
   </ItemGroup>
 
 </Project>
