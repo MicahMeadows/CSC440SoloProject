@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace RegistrarCourseManager.View
@@ -18,7 +17,7 @@ namespace RegistrarCourseManager.View
     /// <summary>
     /// Interaction logic for PopupWindow.xaml
     /// </summary>
-    public partial class PopupWindow : UserControl
+    public partial class PopupWindow : Window
     {
         public PopupWindow()
         {

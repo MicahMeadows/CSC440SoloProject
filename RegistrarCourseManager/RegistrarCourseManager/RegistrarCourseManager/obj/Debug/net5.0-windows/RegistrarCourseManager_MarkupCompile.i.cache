@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\App.xaml
-10-256183005
+11178845719
 
-35-1958032934
+37-1249389571
 194-707434711
-CustomControl\TabButtonStyle.xaml;MainWindow.xaml;Themes\Generic.xaml;View\LoginView.xaml;View\PopupWindow.xaml;View\TabsView.xaml;View\Tabs\SettingsView.xaml;View\Tabs\StudentSearchView.xaml;View\Tabs\UploadRecordsView.xaml;Windows\PopupWindow.xaml;
+CustomControl\TabButtonStyle.xaml;MainWindow.xaml;Themes\Generic.xaml;ViewModel\Popup\EditCourseGradeView.xaml;View\LoginView.xaml;View\Popup\PopupWindow.xaml;View\TabsView.xaml;View\Tabs\SettingsView.xaml;View\Tabs\StudentSearchView.xaml;View\Tabs\UploadRecordsView.xaml;Windows\PopupWindow.xaml;
 
 False
 

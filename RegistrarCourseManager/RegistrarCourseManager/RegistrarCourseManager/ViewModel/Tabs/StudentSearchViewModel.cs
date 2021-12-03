@@ -6,6 +6,7 @@ using System.Windows.Input;
 using RegistrarCourseManager.Commands;
 using RegistrarCourseManager.Model;
 using RegistrarCourseManager.Model.Repositories;
+using RegistrarCourseManager.View;
 
 namespace RegistrarCourseManager.ViewModel.Tabs
 {
@@ -120,7 +121,9 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             // get new course result
             // update course
 
-            MessageBox.Show($"Edit record {SelectedCourseResult.CourseName}");
+            PopupWindow popup = new PopupWindow();
+            
+            popup.Show();
         }
 
         void DeleteRecord(object _)
@@ -138,6 +141,8 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         void EditStudent(object _)
         {
+            
+
             MessageBox.Show($"Edit Student {SelectedStudent.Name}");
         }
 

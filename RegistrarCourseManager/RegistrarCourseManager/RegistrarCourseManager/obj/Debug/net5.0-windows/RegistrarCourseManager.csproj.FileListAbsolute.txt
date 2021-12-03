@@ -5,6 +5,8 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\bin\Debug\net5.0-windows\RegistrarCourseManager.dll
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\bin\Debug\net5.0-windows\ref\RegistrarCourseManager.dll
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\bin\Debug\net5.0-windows\RegistrarCourseManager.pdb
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\bin\Debug\net5.0-windows\System.Windows.Interactivity.dll
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.csproj.AssemblyReference.cache
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\App.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\LoginView.g.cs
@@ -31,10 +33,10 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.AssemblyInfoInputs.cache
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.AssemblyInfo.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.csproj.CoreCompileInputs.cache
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.csproj.CopyComplete
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.dll
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\ref\RegistrarCourseManager.dll
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.pdb
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.genruntimeconfig.cache
-C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.csproj.AssemblyReference.cache
-C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\bin\Debug\net5.0-windows\System.Windows.Interactivity.dll
-C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.csproj.CopyComplete
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.g.cs
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.baml
