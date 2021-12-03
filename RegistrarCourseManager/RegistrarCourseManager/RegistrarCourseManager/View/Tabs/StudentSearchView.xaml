@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:local="clr-namespace:RegistrarCourseManager.View.Tabs"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewmodelTab="clr-namespace:RegistrarCourseManager.ViewModel.Tabs"
@@ -13,39 +14,86 @@
         <viewmodelTab:StudentSearchViewModel />
     </UserControl.DataContext>
 
-    <UserControl.Resources>
-        <Style x:Key="IconButton" TargetType="Button">
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <ContentPresenter
-                            x:Name="PART_Content"
-                            Width="24"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Content="{TemplateBinding Button.Content}" />
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+    <UserControl.Resources />
 
-        </Style>
-    </UserControl.Resources>
-
-    <Grid Margin="20,0">
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="73*" />
-            <RowDefinition Height="297*" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="28*" />
+            <RowDefinition Height="157*" />
+            <RowDefinition Height="60" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Label
+                Content="Name"
+                FontSize="18"
+                FontWeight="Light" />
+            <Border
+                Margin="0,0,50,0"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="2">
+                <TextBox
+                    Width="140"
+                    Height="20"
+                    Margin="5"
+                    VerticalContentAlignment="Center"
+                    BorderBrush="Transparent"
+                    FontSize="14"
+                    FontWeight="Light"
+                    Text="{Binding NameFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding FilterChangedCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+            </Border>
+            <Label
+                Content="Student ID"
+                FontSize="18"
+                FontWeight="Light" />
+            <Border
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="2">
+                <TextBox
+                    x:Name="IdFilter"
+                    Width="140"
+                    Margin="5"
+                    VerticalContentAlignment="Center"
+                    BorderBrush="Transparent"
+                    FontSize="14"
+                    FontWeight="Light"
+                    Text="{Binding IdFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding FilterChangedCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+            </Border>
 
-        <Grid Grid.RowSpan="2" Background="Transparent">
+        </StackPanel>
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="Transparent">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <Border
-                Margin="10"
+                Margin="0,10,10,10"
                 Background="White"
                 BorderThickness="0"
                 CornerRadius="7">
@@ -86,6 +134,7 @@
                                 Grid.Column="1"
                                 Margin="10,0"
                                 HorizontalAlignment="Right"
+                                Command="{Binding AddStudentCommand}"
                                 Style="{StaticResource IconButton}">
                                 <Image Source="/RegistrarCourseManager;component/Images/user-plus.png" />
                             </Button>
@@ -94,45 +143,16 @@
                     </Border>
 
                     <ListView
-                        x:Name="ListView_students"
+                        x:Name="ListView_Students"
                         Grid.Column="0"
                         Margin="10"
                         HorizontalAlignment="Stretch"
                         HorizontalContentAlignment="Stretch"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        ItemsSource="{Binding Students, Mode=TwoWay}"
+                        ItemsSource="{Binding FilteredStudents}"
                         SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
                         <ListView.Resources>
-                            <!--<ControlTemplate x:Key="SelectedTemplate" TargetType="ListViewItem">
-                                <Border
-                                    x:Name="ListViewItem_Border"
-                                    Background="{StaticResource secondaryColor}"
-                                    BorderThickness="0"
-                                    CornerRadius="7">
-
-                                    <Grid Background="Transparent">
-
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <DockPanel Grid.Column="0">
-                                            <Label Content="{Binding Name}" />
-                                            <Label Content="{Binding StudentID}" />
-                                        </DockPanel>
-                                        <DockPanel Grid.Column="1">
-                                            <StackPanel>
-                                                <Label Content="GPA:" />
-                                                <Label Content="{Binding OverallGPA}" />
-                                            </StackPanel>
-                                            <Label Content="EditIcon" />
-                                            <Button />
-                                        </DockPanel>
-                                    </Grid>
-                                </Border>
-                            </ControlTemplate>-->
-
                             <Style TargetType="ListViewItem">
                                 <Setter Property="Background" Value="White" />
                                 <Setter Property="Template">
@@ -141,9 +161,16 @@
                                             <Border
                                                 x:Name="ListViewItem_Border"
                                                 Height="55"
+                                                Margin="0,0,0,3"
                                                 Background="{TemplateBinding Background}"
                                                 BorderThickness="0"
                                                 CornerRadius="7">
+                                                <Border.Effect>
+                                                    <DropShadowEffect
+                                                        Direction="-90"
+                                                        Opacity="0"
+                                                        ShadowDepth="0" />
+                                                </Border.Effect>
 
                                                 <Grid Margin="10,5" Background="Transparent">
 
@@ -188,19 +215,29 @@
                                                                 FontWeight="Light" />
                                                         </StackPanel>
                                                         <Button
+                                                            Name="editButton"
                                                             Padding="0"
                                                             HorizontalAlignment="Right"
+                                                            Command="{Binding ElementName=ListView_Students, Path=DataContext.EditStudentCommand}"
                                                             DockPanel.Dock="Bottom"
-                                                            Style="{StaticResource IconButton}"
-                                                            Visibility="Hidden">
+                                                            Style="{StaticResource IconButton}">
                                                             <Image Source="/RegistrarCourseManager;component/Images/edit-pencil.png" />
                                                         </Button>
                                                     </DockPanel>
                                                 </Grid>
                                             </Border>
+                                            <!--<ControlTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" Value="True">
+                                                    <Setter TargetName="editButton" Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" Value="False">
+                                                    <Setter TargetName="editButton" Property="Visibility" Value="Hidden" />
+                                                </DataTrigger>
+                                            </ControlTemplate.Triggers>-->
                                         </ControlTemplate>
                                     </Setter.Value>
                                 </Setter>
+
                                 <Style.Triggers>
                                     <MultiTrigger>
                                         <MultiTrigger.Conditions>
@@ -208,12 +245,27 @@
                                             <Condition Property="IsMouseOver" Value="True" />
                                         </MultiTrigger.Conditions>
                                         <MultiTrigger.Setters>
+                                            <Setter Property="Cursor" Value="Hand" />
                                             <Setter Property="Background" Value="LightGray" />
                                         </MultiTrigger.Setters>
                                     </MultiTrigger>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="{StaticResource maroonBackground}" />
-                                    </Trigger>
+
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsSelected" Value="True" />
+                                        </MultiTrigger.Conditions>
+                                        <MultiTrigger.Setters>
+                                            <Setter Property="Background" Value="{StaticResource maroonBackground}" />
+                                            <Setter Property="Effect">
+                                                <Setter.Value>
+                                                    <DropShadowEffect
+                                                        Direction="-90"
+                                                        Opacity=".25"
+                                                        ShadowDepth="3" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </MultiTrigger.Setters>
+                                    </MultiTrigger>
                                 </Style.Triggers>
                                 <Style.Resources>
                                     <Style TargetType="{x:Type Label}">
@@ -224,24 +276,24 @@
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
-                                    <Style TargetType="{x:Type Button}">
+                                    <!--<Style TargetType="{x:Type Button}">
                                         <Setter Property="Visibility" Value="Hidden" />
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Path=IsMouseOver}" Value="True">
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Border}, Path=IsMouseOver}" Value="True">
                                                 <Setter Property="Visibility" Value="Visible" />
                                             </DataTrigger>
                                         </Style.Triggers>
-                                    </Style>
+                                    </Style>-->
+
                                 </Style.Resources>
                             </Style>
                         </ListView.Resources>
                     </ListView>
                 </DockPanel>
-
             </Border>
             <Border
                 Grid.Column="1"
-                Margin="10"
+                Margin="10,10,0,10"
                 Background="White"
                 BorderThickness="0"
                 CornerRadius="7">
@@ -267,55 +319,183 @@
 
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width=".5*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
                             </Grid.ColumnDefinitions>
                             <Label
+                                Grid.Column="1"
                                 Margin="10,0"
                                 VerticalAlignment="Center"
-                                Content="Courses"
+                                Content="Course"
                                 DockPanel.Dock="Left"
                                 FontSize="18"
                                 FontWeight="Light"
                                 Foreground="White" />
                             <Label
-                                Grid.Column="1"
-                                Margin="5,0"
-                                HorizontalAlignment="Right"
+                                Grid.Column="2"
                                 VerticalAlignment="Center"
-                                Content="+"
-                                DockPanel.Dock="Right"
+                                Content="Semester"
+                                DockPanel.Dock="Left"
                                 FontSize="18"
-                                Foreground="white" />
+                                FontWeight="Light"
+                                Foreground="White" />
+                            <Label
+                                Grid.Column="3"
+                                VerticalAlignment="Center"
+                                Content="Hours"
+                                DockPanel.Dock="Left"
+                                FontSize="18"
+                                FontWeight="Light"
+                                Foreground="White" />
+                            <Label
+                                Grid.Column="4"
+                                VerticalAlignment="Center"
+                                Content="Grade"
+                                DockPanel.Dock="Left"
+                                FontSize="18"
+                                FontWeight="Light"
+                                Foreground="White" />
+
                         </Grid>
                     </Border>
 
                     <ListView
-                        x:Name="ListView_courses"
+                        x:Name="ListView_Courses"
                         Grid.Column="0"
-                        Margin="10"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        ItemsSource="{Binding FilePath, Mode=TwoWay}"
-                        SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+                        ItemsSource="{Binding SelectedStudentCourseResults, Mode=TwoWay}"
+                        SelectedItem="{Binding SelectedCourseResult, Mode=TwoWay}">
+                        <ListView.Resources>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="FontWeight" Value="Light" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Grid
+                                                Height="52"
+                                                VerticalAlignment="Center"
+                                                Background="{TemplateBinding Background}">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width=".5*" />
+                                                    <ColumnDefinition Width="2*" />
+                                                    <ColumnDefinition Width="2*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                </Grid.ColumnDefinitions>
+                                                <DockPanel Margin="0,6" VerticalAlignment="Stretch">
+                                                    <Button
+                                                        Height="18"
+                                                        VerticalAlignment="Top"
+                                                        Command="{Binding ElementName=ListView_Courses, Path=DataContext.EditRecordCommand}"
+                                                        DockPanel.Dock="Top"
+                                                        Style="{StaticResource IconButton}">
+                                                        <Image Source="/RegistrarCourseManager;component/Images/edit-record.png" />
+                                                    </Button>
+                                                    <Button
+                                                        Height="18"
+                                                        VerticalAlignment="Bottom"
+                                                        Command="{Binding ElementName=ListView_Courses, Path=DataContext.DeleteRecordCommand}"
+                                                        DockPanel.Dock="Bottom"
+                                                        Style="{StaticResource IconButton}">
+                                                        <Image Source="/RegistrarCourseManager;component/Images/file-minus.png" />
+                                                    </Button>
+                                                </DockPanel>
+                                                <Label
+                                                    Grid.Column="1"
+                                                    VerticalContentAlignment="Center"
+                                                    Content="{Binding CourseName}"
+                                                    Foreground="{TemplateBinding Foreground}" />
+                                                <Label
+                                                    Grid.Column="2"
+                                                    VerticalContentAlignment="Center"
+                                                    Content="{Binding Semester}"
+                                                    Foreground="{TemplateBinding Foreground}" />
+                                                <Label
+                                                    Grid.Column="3"
+                                                    HorizontalContentAlignment="Center"
+                                                    VerticalContentAlignment="Center"
+                                                    Content="{Binding Hours}"
+                                                    Foreground="{TemplateBinding Foreground}" />
+                                                <Label
+                                                    Grid.Column="4"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalContentAlignment="Center"
+                                                    Content="{Binding Grade}"
+                                                    Foreground="{TemplateBinding Foreground}" />
+
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <!--<Condition Property="IsSelected" Value="False" />-->
+                                            <Condition Property="IsMouseOver" Value="True" />
+                                        </MultiTrigger.Conditions>
+                                        <MultiTrigger.Setters>
+                                            <Setter Property="IsSelected" Value="True" />
+                                            <Setter Property="Background" Value="{StaticResource maroonBackground}" />
+                                            <Setter Property="Foreground" Value="White" />
+                                        </MultiTrigger.Setters>
+                                    </MultiTrigger>
+
+                                    <!--<MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsSelected" Value="True" />
+                                        </MultiTrigger.Conditions>
+                                        <MultiTrigger.Setters>
+                                            <Setter Property="Background" Value="{StaticResource maroonBackground}" />
+                                            <Setter Property="Foreground" Value="White" />
+                                        </MultiTrigger.Setters>
+                                    </MultiTrigger>-->
+                                </Style.Triggers>
+                                <!--<Style.Resources>
+                                    <Style TargetType="{x:Type Label}">
+                                        <Setter Property="Foreground" Value="Black" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Style.Resources>-->
+                            </Style>
+                        </ListView.Resources>
+                    </ListView>
                 </DockPanel>
 
             </Border>
 
         </Grid>
 
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="148"
+            HorizontalAlignment="Right"
+            Command="{Binding GenerateReportCommand}"
+            DockPanel.Dock="Right"
+            Style="{StaticResource RoundButton}">
+            <StackPanel Orientation="Horizontal">
+                <Image
+                    Width="22"
+                    Margin="5,0,0,0"
+                    Source="/RegistrarCourseManager;component/Images/file-text.png" />
+                <Label
+                    Content="Generate Report"
+                    FontSize="14"
+                    FontWeight="Light"
+                    Foreground="White" />
+            </StackPanel>
+        </Button>
 
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button
-                Grid.Column="1"
-                HorizontalAlignment="Right"
-                Content="Upload Files"
-                DockPanel.Dock="Right"
-                Style="{StaticResource RoundButton}" />
-        </Grid>
     </Grid>
 </UserControl>

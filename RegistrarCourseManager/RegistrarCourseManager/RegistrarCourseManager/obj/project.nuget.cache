@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "+kLVGRQ6DoGRUzg3vPK7tX0FyUkesNw8l9YvEAdz5pBOnWJ9e/Vj2mV177fBZ6n+P/Rqf048m/szECjP8ArlEg==",
+  "dgSpecHash": "OWYJhd0CtUGHTaHGBZGTZOw3976wzyoDfXxIr6XzKUasInvbomllkjn36arHHIb5SKCBuo4Svy6zOmbVfc1kyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Micah\\Desktop\\CSC440SoloProject\\RegistrarCourseManager\\RegistrarCourseManager\\RegistrarCourseManager\\RegistrarCourseManager.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Micah\\.nuget\\packages\\expression.blend.sdk\\1.0.2\\expression.blend.sdk.1.0.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Expression.Blend.Sdk 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Expression.Blend.Sdk",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

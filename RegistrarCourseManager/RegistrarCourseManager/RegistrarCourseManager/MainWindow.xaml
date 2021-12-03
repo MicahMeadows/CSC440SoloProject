@@ -27,5 +27,4 @@
         <viewmodels:MainViewModel />
     </Window.DataContext>
     <ContentControl Content="{Binding CurrentScreenViewModel}" />
-
 </Window>

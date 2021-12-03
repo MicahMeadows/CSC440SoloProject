@@ -28,10 +28,11 @@
                         </Grid.ColumnDefinitions>
                         <Image
                             Grid.Column="0"
+                            Width="24"
                             Margin="8"
                             VerticalAlignment="Center"
                             RenderOptions.BitmapScalingMode="HighQuality"
-                            Source="{TemplateBinding IconPath}" />
+                            Source="{Binding IconPath, RelativeSource={RelativeSource TemplatedParent}}" />
                         <Label
                             x:Name="Label_Title"
                             Grid.Column="1"

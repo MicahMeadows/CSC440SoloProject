@@ -32,9 +32,32 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="35" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Column="1"
+            Margin="0,0,3,0"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <Button
+                Margin="0,0,10,0"
+                HorizontalAlignment="Right"
+                Command="{Binding MinimizeApplicationCommand}"
+                Style="{StaticResource IconButton}">
+                <Image Source="/RegistrarCourseManager;component/Images/minimize-icon-black.png" />
+            </Button>
+            <Button
+                Grid.Column="1"
+                Margin="0,0,3,0"
+                HorizontalAlignment="Right"
+                Command="{Binding QuitApplicationCommand}"
+                Style="{StaticResource IconButton}">
+                <Image Source="/RegistrarCourseManager;component/Images/suspend-icon-black.png" />
+            </Button>
+        </StackPanel>
+
 
         <Grid
             x:Name="gridNavigation"
@@ -83,32 +106,32 @@
                 <custom:TabButton
                     Title="Upload Records"
                     Command="{Binding OpenUploadCourseRecordsTabCommand}"
-                    IconPath="{Binding uploadRecordsImagePath}"
+                    IconPath="/RegistrarCourseManager;component/Images/plus-circle.png"
                     Selected="{Binding CourseRecordUploadTabSelected, Mode=TwoWay}" />
                 <custom:TabButton
                     Title="Student Search"
                     Command="{Binding OpenStudentSearchTabCommand}"
-                    IconPath="{Binding studentSearchImagePath}"
+                    IconPath="/RegistrarCourseManager;component/Images/edit-record.png"
                     Selected="{Binding StudentSearchTabSelected, Mode=TwoWay}" />
                 <custom:TabButton
                     Title="Settings"
                     Command="{Binding OpenSettingsTabCommand}"
-                    IconPath="{Binding settingsImagePath}"
+                    IconPath="/RegistrarCourseManager;component/Images/settings.png"
                     Selected="{Binding SettingsTabSelected, Mode=TwoWay}" />
             </StackPanel>
         </Grid>
 
-        <DockPanel Grid.Row="0" Grid.Column="1">
+        <!--<DockPanel Grid.Row="0" Grid.Column="1" >
             <StackPanel
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
                 <Label
-                    Content="Current Navigation"
+                    Content="{Binding PageText}"
                     FontSize="24"
                     FontWeight="Light" />
             </StackPanel>
-        </DockPanel>
+        </DockPanel>-->
 
         <ContentControl
             Grid.Row="1"

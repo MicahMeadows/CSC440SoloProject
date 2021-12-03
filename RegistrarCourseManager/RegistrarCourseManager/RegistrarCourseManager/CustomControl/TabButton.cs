@@ -42,7 +42,7 @@ namespace RegistrarCourseManager.CustomControl
         public static readonly DependencyProperty SelectedProperty = 
             DependencyProperty.Register("Selected", typeof(bool), typeof(TabButton), new FrameworkPropertyMetadata(defaultValue: false, propertyChangedCallback: new PropertyChangedCallback(OnSelectedChanged)));
         public static readonly DependencyProperty IconPathProperty = 
-            DependencyProperty.Register("IconPath", typeof(string), typeof(TabButton), new PropertyMetadata("../Images/plus-circle.png"));
+            DependencyProperty.Register("IconPath", typeof(string), typeof(TabButton), new PropertyMetadata("/RegistrarCourseManager;component/Images/plus-circle.png"));
         public static readonly DependencyProperty TitleProperty = 
             DependencyProperty.Register("Title", typeof(string), typeof(TabButton), new PropertyMetadata("test"));
         public static readonly DependencyProperty CommandProperty = 

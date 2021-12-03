@@ -7,15 +7,23 @@ namespace RegistrarCourseManager.ViewModel
 {
     class TabsViewModel : ViewModelBase
     {
-
-        public string uploadRecordsImagePath = @"RegistrarCourseManager\Images\plus-circle.png";
-        public string studentSearchImagePath = @"RegistrarCourseManager\Images\plus-circle.png";
-        public string settingsImagePath = @"RegistrarCourseManager\Images\plus-circle.png";
-
+        public ICommand MinimizeApplicationCommand { get; set; }
+        public ICommand QuitApplicationCommand { get; set; }
         public ICommand OpenUploadCourseRecordsTabCommand { get; set; }
         public ICommand OpenStudentSearchTabCommand { get; set; }
         public ICommand OpenSettingsTabCommand { get; set; }
 
+        private string pageText;
+        public string PageText
+        {
+            get => pageText;
+            set
+            {
+                pageText = value;
+                OnPropertyChanged("PageText");
+            }
+        }
+        
         private bool courseRecordUploadTabSelected;
         public bool CourseRecordUploadTabSelected
         {
@@ -63,8 +71,21 @@ namespace RegistrarCourseManager.ViewModel
             }
         }
 
+        void quitApp(object _)
+        {
+            MessageBox.Show("quit app");
+        }
+
+        void minimizeApp(object _)
+        {
+            MessageBox.Show("minimize app");
+        }
+
         public TabsViewModel()
         {
+            QuitApplicationCommand = new BaseCommand(quitApp);
+            MinimizeApplicationCommand = new BaseCommand(minimizeApp);
+
             OpenUploadCourseRecordsTabCommand = new BaseCommand(OpenUploadCourseRecordsTab);
             OpenStudentSearchTabCommand = new BaseCommand(OpenStudentSearchTab);
             OpenSettingsTabCommand = new BaseCommand(OpenSettingsTab);
@@ -77,6 +98,9 @@ namespace RegistrarCourseManager.ViewModel
             CourseRecordUploadTabSelected = true;
             StudentSearchTabSelected = false;
             SettingsTabSelected = false;
+
+            PageText = "Upload Records";
+
             OnPropertyChanged("CourseRecordUploadTabSelected");
 
             CurrentTabViewModel = new UploadRecordsViewModel();
@@ -87,6 +111,9 @@ namespace RegistrarCourseManager.ViewModel
             CourseRecordUploadTabSelected = false;
             StudentSearchTabSelected = true;
             SettingsTabSelected = false;
+
+            PageText = "Student Search";
+
             OnPropertyChanged("StudentSearchTabSelected");
 
             CurrentTabViewModel = new StudentSearchViewModel();
@@ -97,6 +124,9 @@ namespace RegistrarCourseManager.ViewModel
             CourseRecordUploadTabSelected = false;
             StudentSearchTabSelected = false;
             SettingsTabSelected = true;
+
+            PageText = "Settings";
+
             OnPropertyChanged("SettingsTabSelected");
 
             CurrentTabViewModel = new SettingsViewModel();
