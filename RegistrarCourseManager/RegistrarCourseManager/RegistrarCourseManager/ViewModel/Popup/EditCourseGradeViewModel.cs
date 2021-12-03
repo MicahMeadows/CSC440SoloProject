@@ -19,6 +19,7 @@ namespace RegistrarCourseManager.ViewModel.Popup
 
         private CourseGrade origional;
         private CourseGrade toEdit;
+
         public CourseGrade ToEdit
         {
             get => toEdit;
@@ -35,15 +36,33 @@ namespace RegistrarCourseManager.ViewModel.Popup
         {
             if (!origional.Equals(ToEdit))
             {
-                gradeRepository.DeleteCourseGrade(origional);
-                gradeRepository.AddCourseGrade(ToEdit);
+                try
+                {
+                    gradeRepository.AddCourseGrade(ToEdit);
+                    gradeRepository.DeleteCourseGrade(origional);
+
+                }
+                catch
+                {
+                    MessageBox.Show("Edit failed");
+                }
+            } else
+            {
+                MessageBox.Show("No Edit Found");
             }
             popup.Close();
         }
 
         void submitAdd(object _)
         {
-            gradeRepository.AddCourseGrade(ToEdit);
+            try
+            {
+                gradeRepository.AddCourseGrade(ToEdit);
+            } catch
+            {
+                MessageBox.Show("Grade record already exists");
+                // grade exists
+            }
             popup.Close();
         }
 

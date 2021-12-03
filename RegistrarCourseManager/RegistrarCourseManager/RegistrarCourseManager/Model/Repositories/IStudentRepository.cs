@@ -11,5 +11,6 @@ namespace RegistrarCourseManager.Model.Repositories
     {
         public ObservableCollection<Student> GetStudents();
         public void AddStudent(Student student);
+        public void UpdateStudent(Student student);
     }
 }

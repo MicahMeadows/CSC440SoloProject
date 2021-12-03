@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RegistrarCourseManager.Model;
+using RegistrarCourseManager.Model.Repositories;
 
 namespace RegistrarCourseManager.ViewModel.Popup
 {
@@ -20,9 +22,112 @@ namespace RegistrarCourseManager.ViewModel.Popup
     /// </summary>
     public partial class EditCourseGradeView : UserControl
     {
-        public EditCourseGradeView()
+        CourseGrade courseGradeToChange;
+        CourseGrade newCourseGrade;
+        IGradesRepository gradeRepository;
+        Window popup;
+
+        public EditCourseGradeView(Window popup, IGradesRepository gradeRepository, CourseGrade courseGrade = null, string id = "")
         {
             InitializeComponent();
+
+            this.popup = popup;
+            this.gradeRepository = gradeRepository;
+            this.courseGradeToChange = courseGrade;
+            if (courseGrade != null)
+                this.newCourseGrade = courseGrade.Copy();
+            else
+                this.newCourseGrade = new CourseGrade(id, "", 0, "", 0, "");
+
+            if (courseGrade != null)
+            {
+                TextBox_Prefix.Text = courseGrade.CoursePrefix;
+                TextBox_CourseNum.Text = courseGrade.CourseNum.ToString();
+                TextBox_Semester.Text = courseGrade.Semester;
+                TextBox_Year.Text = courseGrade.Year.ToString();
+                TextBox_Grade.Text = courseGrade.Grade;
+            }
+        }
+
+        private void TextBox_CoursePrefixChanged(object sender, TextChangedEventArgs e)
+        {
+            newCourseGrade.CoursePrefix = (sender as TextBox).Text;
+        }
+
+        private void TextBox_CourseNumChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                newCourseGrade.CourseNum = int.Parse((sender as TextBox).Text);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void TextBox_SemesterChanged(object sender, TextChangedEventArgs e)
+        {
+            newCourseGrade.Semester = (sender as TextBox).Text;
+        }
+
+        private void TextBox_YearChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                newCourseGrade.Year = int.Parse((sender as TextBox).Text);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void TextBox_GradeChanged(object sender, TextChangedEventArgs e)
+        {
+            newCourseGrade.Grade = (sender as TextBox).Text;
+        }
+
+        private void Button_SubmitClick(object sender, RoutedEventArgs e)
+        {
+            var oldG = courseGradeToChange;
+            var newG = newCourseGrade;
+
+            bool newAdd = courseGradeToChange == null;
+
+            if(newAdd)
+            { 
+                try
+                {
+                    gradeRepository.AddCourseGrade(newCourseGrade);
+                } catch
+                {
+                    MessageBox.Show("Grade already exist");
+                }
+                popup.Close();
+                return;
+            }
+            else if(courseGradeToChange.CompareTo(newCourseGrade) == 0)
+            {
+                popup.Close();
+                return;
+            }
+            else if(gradeRepository.CourseGradeExists(newCourseGrade))
+            {
+                MessageBox.Show("Record already exists");
+                popup.Close();
+                return;
+            }
+            try
+            {
+                gradeRepository.AddCourseGrade(newCourseGrade);
+                gradeRepository.DeleteCourseGrade(courseGradeToChange);
+            } catch
+            {
+                MessageBox.Show("Failed to update");
+            }
+            
+            popup.Close();
         }
     }
 }

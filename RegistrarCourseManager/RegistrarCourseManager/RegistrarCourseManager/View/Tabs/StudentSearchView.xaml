@@ -130,14 +130,14 @@
                                 FontSize="18"
                                 FontWeight="Light"
                                 Foreground="White" />
-                            <Button
+                            <!--<Button
                                 Grid.Column="1"
                                 Margin="10,0"
                                 HorizontalAlignment="Right"
                                 Command="{Binding AddStudentCommand}"
                                 Style="{StaticResource IconButton}">
                                 <Image Source="/RegistrarCourseManager;component/Images/user-plus.png" />
-                            </Button>
+                            </Button>-->
 
                         </Grid>
                     </Border>
@@ -210,11 +210,11 @@
                                                                 FontWeight="Light" />
                                                             <Label
                                                                 Padding="0"
-                                                                Content="{Binding OverallGPA}"
+                                                                Content="{Binding OverallGPA, StringFormat={}{0:#,0.0}}"
                                                                 FontSize="12"
                                                                 FontWeight="Light" />
                                                         </StackPanel>
-                                                        <Button
+                                                        <!--<Button
                                                             Name="editButton"
                                                             Padding="0"
                                                             HorizontalAlignment="Right"
@@ -222,7 +222,7 @@
                                                             DockPanel.Dock="Bottom"
                                                             Style="{StaticResource IconButton}">
                                                             <Image Source="/RegistrarCourseManager;component/Images/edit-pencil.png" />
-                                                        </Button>
+                                                        </Button>-->
                                                     </DockPanel>
                                                 </Grid>
                                             </Border>

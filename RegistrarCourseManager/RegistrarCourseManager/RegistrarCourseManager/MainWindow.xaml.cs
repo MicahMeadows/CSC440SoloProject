@@ -14,5 +14,10 @@ namespace RegistrarCourseManager
         {
             InitializeComponent();
         }
+
+        private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

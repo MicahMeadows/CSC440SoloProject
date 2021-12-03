@@ -10,6 +10,7 @@
     d:DesignWidth="260"
     Background="Transparent"
     mc:Ignorable="d">
+
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -39,6 +40,7 @@
                                 FontWeight="Light"
                                 Foreground="Black" />
                             <TextBox
+                                x:Name="TextBox_Prefix"
                                 HorizontalAlignment="Stretch"
                                 HorizontalContentAlignment="Stretch"
                                 Background="Transparent"
@@ -47,8 +49,8 @@
                                 FontSize="18"
                                 FontWeight="UltraLight"
                                 Foreground="Black"
-                                Text="{Binding ToEdit.CoursePrefix, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                TextAlignment="Left" />
+                                TextAlignment="Left"
+                                TextChanged="TextBox_CoursePrefixChanged" />
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -69,6 +71,7 @@
                                 FontWeight="Light"
                                 Foreground="Black" />
                             <TextBox
+                                x:Name="TextBox_CourseNum"
                                 HorizontalAlignment="Stretch"
                                 HorizontalContentAlignment="Stretch"
                                 Background="Transparent"
@@ -77,8 +80,8 @@
                                 FontSize="18"
                                 FontWeight="UltraLight"
                                 Foreground="Black"
-                                Text="{Binding ToEdit.CourseNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                TextAlignment="Left" />
+                                TextAlignment="Left"
+                                TextChanged="TextBox_CourseNumChanged" />
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -102,6 +105,7 @@
                                 FontWeight="Light"
                                 Foreground="Black" />
                             <TextBox
+                                x:Name="TextBox_Semester"
                                 HorizontalAlignment="Stretch"
                                 HorizontalContentAlignment="Stretch"
                                 Background="Transparent"
@@ -110,8 +114,8 @@
                                 FontSize="18"
                                 FontWeight="UltraLight"
                                 Foreground="Black"
-                                Text="{Binding ToEdit.Semester, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                TextAlignment="Left" />
+                                TextAlignment="Left"
+                                TextChanged="TextBox_SemesterChanged" />
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -132,6 +136,7 @@
                                 FontWeight="Light"
                                 Foreground="Black" />
                             <TextBox
+                                x:Name="TextBox_Year"
                                 HorizontalAlignment="Stretch"
                                 HorizontalContentAlignment="Stretch"
                                 Background="Transparent"
@@ -140,8 +145,8 @@
                                 FontSize="18"
                                 FontWeight="UltraLight"
                                 Foreground="Black"
-                                Text="{Binding ToEdit.Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                TextAlignment="Left" />
+                                TextAlignment="Left"
+                                TextChanged="TextBox_YearChanged" />
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -163,6 +168,7 @@
                             FontWeight="Light"
                             Foreground="Black" />
                         <TextBox
+                            x:Name="TextBox_Grade"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Background="Transparent"
@@ -171,8 +177,8 @@
                             FontSize="18"
                             FontWeight="UltraLight"
                             Foreground="Black"
-                            Text="{Binding ToEdit.Grade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                            TextAlignment="Left" />
+                            TextAlignment="Left"
+                            TextChanged="TextBox_GradeChanged" />
                     </StackPanel>
                 </Border>
             </StackPanel>
@@ -182,7 +188,7 @@
             Width="75"
             Margin="0,8"
             Background="{StaticResource maroonBackground}"
-            Command="{Binding SubmitCommand}"
+            Click="Button_SubmitClick"
             Style="{StaticResource RoundButton}">
             <Label
                 Content="Submit"

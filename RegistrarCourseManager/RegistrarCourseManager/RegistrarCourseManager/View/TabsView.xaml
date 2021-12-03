@@ -77,7 +77,7 @@
                     ShadowDepth="3" />
             </Grid.Effect>
 
-            <Grid>
+            <Grid Visibility="Hidden">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="4*" />
@@ -101,6 +101,19 @@
                     FontWeight="Light"
                     Foreground="White" />
             </Grid>
+            <StackPanel Orientation="Horizontal">
+
+                <Image
+                    Margin="10"
+                    RenderOptions.BitmapScalingMode="HighQuality"
+                    Source="/RegistrarCourseManager;component/Images/eku-big-e.png" />
+                <!--<Label
+                    VerticalAlignment="Center"
+                    Content="Registrar System"
+                    FontSize="18"
+                    FontWeight="Light"
+                    Foreground="White" />-->
+            </StackPanel>
 
             <StackPanel x:Name="stackPanelNavigationTabs" Grid.Row="2">
                 <custom:TabButton
@@ -114,9 +127,9 @@
                     IconPath="/RegistrarCourseManager;component/Images/edit-record.png"
                     Selected="{Binding StudentSearchTabSelected, Mode=TwoWay}" />
                 <custom:TabButton
-                    Title="Settings"
+                    Title="Info"
                     Command="{Binding OpenSettingsTabCommand}"
-                    IconPath="/RegistrarCourseManager;component/Images/settings.png"
+                    IconPath="/RegistrarCourseManager;component/Images/help-circle.png"
                     Selected="{Binding SettingsTabSelected, Mode=TwoWay}" />
             </StackPanel>
         </Grid>

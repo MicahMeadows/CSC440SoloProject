@@ -5,19 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace RegistrarCourseManager.ViewModel.Popup
 {
     class PopupWindowViewModel : ViewModelBase
     {
 
-        private ViewModelBase popupViewModel;
-        public ViewModelBase PopupViewModel
+        private UserControl popupView;
+        public UserControl PopupView
         {
-            get => popupViewModel;
+            get => popupView;
             set
             {
-                popupViewModel = value;
+                popupView = value;
                 OnPropertyChanged("PopupViewMode");
             }
         }
@@ -44,11 +45,17 @@ namespace RegistrarCourseManager.ViewModel.Popup
             }
         }
 
-        public PopupWindowViewModel(ViewModelBase popupContentViewModel, string title)
+        public PopupWindowViewModel(UserControl view, string title)
         {
             IconSource = "/RegistrarCourseManager;component/Images/file-plus.png";
             Title = title;
-            PopupViewModel = popupContentViewModel;
+            popupView = view;
         }
+        //public PopupWindowViewModel(ViewModelBase popupContentViewModel, string title)
+        //{
+        //    IconSource = "/RegistrarCourseManager;component/Images/file-plus.png";
+        //    Title = title;
+        //    // PopupViewModel = popupContentViewModel;
+        //}
     }
 }

@@ -73,12 +73,12 @@ namespace RegistrarCourseManager.ViewModel
 
         void quitApp(object _)
         {
-            MessageBox.Show("quit app");
+            Application.Current.Shutdown();
         }
 
         void minimizeApp(object _)
         {
-            MessageBox.Show("minimize app");
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
 
         public TabsViewModel()

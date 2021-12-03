@@ -12,6 +12,7 @@ namespace RegistrarCourseManager.Model.Repositories
         public ObservableCollection<CourseGrade> GetCourseGrades(Student student);
         public void DeleteCourseGrade(CourseGrade grade);
         public void AddCourseGrade(CourseGrade grade);
+        public void EditCourseGrade(CourseGrade grade);
         public bool CourseGradeExists(CourseGrade grade);
     }
 }

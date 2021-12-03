@@ -77,7 +77,15 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         private ObservableCollection<StudentCourseResult> selectedStudentCourseResults = new ObservableCollection<StudentCourseResult>();
         public ObservableCollection<StudentCourseResult> SelectedStudentCourseResults
         {
-            get => selectedStudentCourseResults;
+            get
+            {
+                if(SelectedStudent != null)
+                {
+                    SelectedStudent.OverallGPA = CalculateGPA(selectedStudentCourseResults);
+                    OnPropertyChanged("SelectedStudent.OverallGPA");
+                }
+                return selectedStudentCourseResults;
+            }
             set
             {
                 selectedStudentCourseResults = value;
@@ -132,14 +140,23 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         async void EditRecord(object _)
         {
-            var recordToEdit = selectedCourseResult.CourseGrade;
+            if (SelectedStudent == null)
+                return;
 
             PopupWindow popup = new PopupWindow();
-            popup.DataContext = new PopupWindowViewModel(new EditCourseGradeViewModel(gradesRepository, recordToEdit, popup), "Edit Grade");
-            // popup.Show();
+
+            popup.DataContext = new PopupWindowViewModel(new EditCourseGradeView(popup, gradesRepository, SelectedCourseResult.CourseGrade), "Edit Grade");
             await ShowPopup(popup);
 
+            SelectedStudent.OverallGPA = CalculateGPA(SelectedStudentCourseResults);
             UpdateSelectedStudentCourseResults();
+            UpdateGPA();
+
+        }
+
+        void UpdateGPA()
+        {
+            UpdateFilteredStudents(null);
         }
 
         async void AddRecord(object _)
@@ -149,10 +166,12 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
             PopupWindow popup = new PopupWindow();
 
-            popup.DataContext = new PopupWindowViewModel(new EditCourseGradeViewModel(gradesRepository, SelectedStudent.StudentID, popup), "Add Grade");
+            popup.DataContext = new PopupWindowViewModel(new EditCourseGradeView(popup, gradesRepository, null, SelectedStudent.StudentID), "Add Grade");
             await ShowPopup(popup);
 
+            SelectedStudent.OverallGPA = CalculateGPA(SelectedStudentCourseResults);
             UpdateSelectedStudentCourseResults();
+            UpdateGPA();
         }
 
         void DeleteRecord(object _)
@@ -166,11 +185,12 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             {
                 MessageBox.Show(e.ToString());
             }
+            UpdateGPA();
         }
 
         void EditStudent(object _)
         {
-            MessageBox.Show($"Edit Student {SelectedStudent.Name}");
+            UpdateSelectedStudentCourseResults();
         }
 
         void AddStudent(object _)
@@ -203,6 +223,40 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         }
 
+        double CalculateGPA(ObservableCollection<StudentCourseResult> courseResults)
+        {
+            double pointsEarned = 0;
+            double creditsAttempted = 0;
+            foreach(var result in courseResults)
+            {
+                pointsEarned += result.Hours * GradeToInt(result.Grade);
+                creditsAttempted += result.Hours;
+            }
+
+            if (creditsAttempted == 0)
+                return 0;
+            return Math.Round(pointsEarned / creditsAttempted, 2);
+        }
+
+        int GradeToInt(string grade)
+        {
+            switch (grade.ToLower()) 
+            {
+                case "a":
+                    return 4;
+                case "b":
+                    return 3;
+                case "c":
+                    return 2;
+                case "d":
+                    return 1;
+                case "f":
+                    return 0;
+                default:
+                    return 0;
+            }
+        }
+
         void UpdateSelectedStudentCourseResults()
         {
             try
@@ -210,10 +264,11 @@ namespace RegistrarCourseManager.ViewModel.Tabs
                 var courseGrades = gradesRepository.GetCourseGrades(SelectedStudent);
 
                 SelectedStudentCourseResults = MakeCourseResults(courseGrades);
+
                 OnPropertyChanged("SelectedStudentCourseResults");
             } catch 
             {
-
+                MessageBox.Show("Failed to update results");
             }
         }
 

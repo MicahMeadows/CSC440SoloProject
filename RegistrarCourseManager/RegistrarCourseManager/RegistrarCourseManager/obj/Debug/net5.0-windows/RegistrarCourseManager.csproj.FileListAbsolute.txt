@@ -10,6 +10,8 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\App.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\LoginView.g.cs
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\EditCourseGradeView.g.cs
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\TabsView.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\SettingsView.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\StudentSearchView.g.cs
@@ -23,6 +25,8 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\MainWindow.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\Themes\Generic.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\LoginView.baml
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\EditCourseGradeView.baml
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\TabsView.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\SettingsView.baml
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Tabs\StudentSearchView.baml
@@ -38,7 +42,3 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\ref\RegistrarCourseManager.dll
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.pdb
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.genruntimeconfig.cache
-C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.g.cs
-C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.baml
-C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\EditCourseGradeView.g.cs
-C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\EditCourseGradeView.baml

@@ -5,6 +5,7 @@
         public string StudentID { get; set; }
         public string Name { get; set; }
         public double OverallGPA { get; set; }
+       
 
         public Student(string StudentID, string Name, double OverallGPA)
         {

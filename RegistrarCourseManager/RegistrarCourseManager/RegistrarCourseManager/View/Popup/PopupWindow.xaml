@@ -16,14 +16,8 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type popupViewmodel:EditCourseGradeViewModel}">
+        <!--<DataTemplate DataType="{x:Type popupViewmodel:EditCourseGradeViewModel}">
             <popupView:EditCourseGradeView />
-        </DataTemplate>
-        <!--<DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
-            <view:LoginView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:TabsViewModel}">
-            <view:TabsView />
         </DataTemplate>-->
     </Window.Resources>
     <!--<Window.DataContext>
@@ -79,7 +73,7 @@
                 </StackPanel>
             </Border>
 
-            <ContentPresenter Grid.Row="1" Content="{Binding PopupViewModel}" />
+            <ContentPresenter Grid.Row="1" Content="{Binding PopupView}" />
 
         </Grid>
 

@@ -16,9 +16,9 @@ namespace RegistrarCourseManager.Model
 
         public CourseGrade CourseGrade { get; set; }
 
-        public string CourseName => CourseGrade.CoursePrefix + " " + CourseGrade.CourseNum.ToString();
+        public string CourseName => CourseGrade.CoursePrefix + CourseGrade.CourseNum.ToString();
 
-        public string Semester => CourseGrade.Semester + CourseGrade.Year.ToString();
+        public string Semester => CourseGrade.Semester + " " + CourseGrade.Year.ToString();
 
         public int Hours { get; set; }
 

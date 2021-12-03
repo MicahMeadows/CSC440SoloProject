@@ -12,8 +12,10 @@
     Height="600"
     MinWidth="800"
     MinHeight="480"
+    AllowsTransparency="True"
     ResizeMode="CanResizeWithGrip"
     WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
@@ -26,5 +28,19 @@
     <Window.DataContext>
         <viewmodels:MainViewModel />
     </Window.DataContext>
-    <ContentControl Content="{Binding CurrentScreenViewModel}" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border
+            Grid.Row="0"
+            Margin="0,0,80,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Panel.ZIndex="1"
+            Background="Transparent"
+            MouseDown="Border_MouseDown" />
+        <ContentControl Grid.RowSpan="2" Content="{Binding CurrentScreenViewModel}" />
+    </Grid>
 </Window>

@@ -1,6 +1,8 @@
-﻿namespace RegistrarCourseManager.Model
+﻿using System;
+
+namespace RegistrarCourseManager.Model
 {
-    public class Course
+    public class Course /*: IComparable*/
     {
         public string CoursePrefix { get; set; }
         public int CourseNum { get; set; }
@@ -17,14 +19,15 @@
             this.Hours = Hours;
         }
 
-        public override bool Equals(object obj)
-        {
-            var dst = obj as Course;
-            return CoursePrefix.Equals(dst.CoursePrefix)
-                && CourseNum == dst.CourseNum
-                && Year == dst.Year
-                && Semester.Equals(dst.Semester)
-                && Hours == dst.Hours;
-        }
+
+        //public override bool Equals(object obj)
+        //{
+        //    var dst = obj as Course;
+        //    return CoursePrefix.Equals(dst.CoursePrefix)
+        //        && CourseNum == dst.CourseNum
+        //        && Year == dst.Year
+        //        && Semester.Equals(dst.Semester)
+        //        && Hours == dst.Hours;
+        //}
     }
 }
