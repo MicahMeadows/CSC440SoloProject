@@ -17,5 +17,14 @@
             this.Hours = Hours;
         }
 
+        public override bool Equals(object obj)
+        {
+            var dst = obj as Course;
+            return CoursePrefix.Equals(dst.CoursePrefix)
+                && CourseNum == dst.CourseNum
+                && Year == dst.Year
+                && Semester.Equals(dst.Semester)
+                && Hours == dst.Hours;
+        }
     }
 }

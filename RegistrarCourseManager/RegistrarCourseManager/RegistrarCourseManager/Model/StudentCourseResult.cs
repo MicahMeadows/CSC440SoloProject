@@ -8,17 +8,20 @@ namespace RegistrarCourseManager.Model
 {
     public class StudentCourseResult
     {
-        public StudentCourseResult(string courseName, string semester, int hours, string grade)
+        public StudentCourseResult(CourseGrade courseGrade, int hours)
         {
-            CourseName = courseName;
-            Semester = semester;
+            this.CourseGrade = courseGrade;
             Hours = hours;
-            Grade = grade;
         }
 
-        public string CourseName { get; set; }
-        public string Semester { get; set; }
+        public CourseGrade CourseGrade { get; set; }
+
+        public string CourseName => CourseGrade.CoursePrefix + " " + CourseGrade.CourseNum.ToString();
+
+        public string Semester => CourseGrade.Semester + CourseGrade.Year.ToString();
+
         public int Hours { get; set; }
-        public string Grade { get; set; }
+
+        public string Grade => CourseGrade.Grade;
     }
 }

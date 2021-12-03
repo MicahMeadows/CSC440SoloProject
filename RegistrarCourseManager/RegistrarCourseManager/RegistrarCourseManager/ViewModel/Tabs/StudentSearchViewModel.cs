@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using RegistrarCourseManager.Commands;
@@ -15,6 +12,8 @@ namespace RegistrarCourseManager.ViewModel.Tabs
     class StudentSearchViewModel : ViewModelBase
     {
         public IStudentRepository studentRepository;
+        public IGradesRepository gradesRepository;
+        public ICourseRepository courseRepository;
 
         public ICommand AddStudentCommand { get; set; }
         public ICommand EditStudentCommand { get; set; }
@@ -22,6 +21,9 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         public ICommand DeleteRecordCommand { get; set; }
         public ICommand FilterChangedCommand { get; set; }
         public ICommand GenerateReportCommand { get; set; }
+
+        private ObservableCollection<Student> students = new ObservableCollection<Student>();
+        private ObservableCollection<CourseGrade> gradeRecords = new ObservableCollection<CourseGrade>();
 
         private string idFilter = "";
         public string IdFilter
@@ -63,6 +65,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             set
             {
                 selectedStudent = value;
+                UpdateSelectedStudentCourseResults();
                 OnPropertyChanged("SelectedStudent");
             }
         }
@@ -78,7 +81,6 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             }
         }
 
-        private ObservableCollection<Student> students = new ObservableCollection<Student>();
 
         private ObservableCollection<Student> filteredStudents;
         public ObservableCollection<Student> FilteredStudents
@@ -109,6 +111,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             FilteredStudents = new ObservableCollection<Student>(students.Where(student => StudentMatchesFilter(student)));
         }
 
+
         void EditRecord(object _)
         {
             MessageBox.Show($"Edit record {SelectedCourseResult.CourseName}");
@@ -116,7 +119,15 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         void DeleteRecord(object _)
         {
-            MessageBox.Show($"Delete record {SelectedCourseResult.CourseName}");
+            try
+            {
+                gradesRepository.DeleteCourseGrade(SelectedCourseResult.CourseGrade);
+                UpdateSelectedStudentCourseResults();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
 
         void EditStudent(object _)
@@ -129,6 +140,44 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             studentRepository.AddStudent(new Student("999999999", "test add", 0.5));
             students = studentRepository.GetStudents();
             UpdateFilteredStudents(null);
+        }
+
+        ObservableCollection<StudentCourseResult> MakeCourseResults(ObservableCollection<CourseGrade> grades)
+        {
+            ObservableCollection<StudentCourseResult> courseResults = new ObservableCollection<StudentCourseResult>();
+
+            foreach(var grade in grades) 
+            {
+                courseResults.Add(new StudentCourseResult(grade, GetCreditHours(grade)));
+            }
+            return courseResults;
+        }
+
+        int GetCreditHours(CourseGrade grade)
+        {
+            try
+            {
+                return courseRepository.GetCourse(grade).Hours;
+            } catch (Exception e)
+            {
+                return -1;
+            }
+
+        }
+
+        void UpdateSelectedStudentCourseResults()
+        {
+            try
+            {
+                var courseGrades = gradesRepository.GetCourseGrades(SelectedStudent);
+
+                SelectedStudentCourseResults = MakeCourseResults(courseGrades);
+            }
+            catch (Exception e)
+            {
+
+            }
+
         }
 
         void SetupCommands()
@@ -146,6 +195,8 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         void SetupRepositories()
         {
             studentRepository = new TestingStudentRepository();
+            gradesRepository = new TestingGradesRepository();
+            courseRepository = new TestingCourseRepository();
         }
 
         public StudentSearchViewModel()
@@ -153,18 +204,8 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             SetupCommands();
             SetupRepositories();
 
-            filteredStudents = students = studentRepository.GetStudents();
-
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 440", "Fall 2021",    4, "A"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 360", "Spring 2020",  4, "C"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("MAT 234", "Fall 2019",    3, "B"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 340", "Spring 2020",  3, "A"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 311", "Fall 2021",    3, "B")); 
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 440", "Fall 2021",    4, "A"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 360", "Spring 2020",  4, "C"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("MAT 234", "Fall 2019",    3, "B"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 340", "Spring 2020",  3, "A"));
-            SelectedStudentCourseResults.Add(new StudentCourseResult("CSC 311", "Fall 2021",    3, "B"));
+            students = studentRepository.GetStudents();
+            UpdateFilteredStudents(null);
         }
     }
 }
