@@ -13,9 +13,12 @@ namespace RegistrarCourseManager.Model.Repositories
 
         public TestingCourseRepository()
         {
-            allCourses.Add(new Course("CSC", 191, 2021, "Spring", 3));
-            allCourses.Add(new Course("MAT", 234, 2021, "Spring", 4));
+            allCourses.Add(new Course("CSC", 191, 2020, "Spring", 3));
+            allCourses.Add(new Course("MAT", 237, 2021, "Spring", 4));
             allCourses.Add(new Course("MUS", 290, 2019, "Fall", 2));
+            allCourses.Add(new Course("CSC", 191, 2020, "Spring", 4));
+            allCourses.Add(new Course("CSC", 360, 2021, "Fall", 3));
+            allCourses.Add(new Course("CSC", 190, 2019, "Fall", 4));
         }
 
         public Course GetCourse(CourseGrade courseGrade)

@@ -114,6 +114,12 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         void EditRecord(object _)
         {
+            // get selected course result
+
+            // prompt to edit
+            // get new course result
+            // update course
+
             MessageBox.Show($"Edit record {SelectedCourseResult.CourseName}");
         }
 
@@ -160,7 +166,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
                 return courseRepository.GetCourse(grade).Hours;
             } catch (Exception e)
             {
-                return -1;
+                return 0;
             }
 
         }
