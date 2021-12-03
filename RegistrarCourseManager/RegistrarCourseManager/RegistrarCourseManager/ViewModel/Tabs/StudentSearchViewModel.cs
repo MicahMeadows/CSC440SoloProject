@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using RegistrarCourseManager.Commands;
 using RegistrarCourseManager.Model;
 using RegistrarCourseManager.Model.Repositories;
 using RegistrarCourseManager.View;
+using RegistrarCourseManager.ViewModel.Popup;
 
 namespace RegistrarCourseManager.ViewModel.Tabs
 {
@@ -19,6 +21,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         public ICommand AddStudentCommand { get; set; }
         public ICommand EditStudentCommand { get; set; }
         public ICommand EditRecordCommand { get; set; }
+        public ICommand AddRecordCommand { get; set; }
         public ICommand DeleteRecordCommand { get; set; }
         public ICommand FilterChangedCommand { get; set; }
         public ICommand GenerateReportCommand { get; set; }
@@ -112,18 +115,44 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             FilteredStudents = new ObservableCollection<Student>(students.Where(student => StudentMatchesFilter(student)));
         }
 
-
-        void EditRecord(object _)
+        void submitEditRecord(object _)
         {
-            // get selected course result
+            MessageBox.Show("click submit");
+        }
 
-            // prompt to edit
-            // get new course result
-            // update course
+        private Task ShowPopup(PopupWindow popup)
+        {
+            var task = new TaskCompletionSource<object>();
+            popup.Owner = Application.Current.MainWindow;
+            popup.Closed += (s, a) => task.SetResult(null);
+            popup.Show();
+            popup.Focus();
+            return task.Task;
+        }
+
+        async void EditRecord(object _)
+        {
+            var recordToEdit = selectedCourseResult.CourseGrade;
 
             PopupWindow popup = new PopupWindow();
-            
-            popup.Show();
+            popup.DataContext = new PopupWindowViewModel(new EditCourseGradeViewModel(gradesRepository, recordToEdit, popup), "Edit Grade");
+            // popup.Show();
+            await ShowPopup(popup);
+
+            UpdateSelectedStudentCourseResults();
+        }
+
+        async void AddRecord(object _)
+        {
+            if (SelectedStudent == null)
+                return;
+
+            PopupWindow popup = new PopupWindow();
+
+            popup.DataContext = new PopupWindowViewModel(new EditCourseGradeViewModel(gradesRepository, SelectedStudent.StudentID, popup), "Add Grade");
+            await ShowPopup(popup);
+
+            UpdateSelectedStudentCourseResults();
         }
 
         void DeleteRecord(object _)
@@ -141,8 +170,6 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         void EditStudent(object _)
         {
-            
-
             MessageBox.Show($"Edit Student {SelectedStudent.Name}");
         }
 
@@ -183,12 +210,11 @@ namespace RegistrarCourseManager.ViewModel.Tabs
                 var courseGrades = gradesRepository.GetCourseGrades(SelectedStudent);
 
                 SelectedStudentCourseResults = MakeCourseResults(courseGrades);
-            }
-            catch (Exception e)
+                OnPropertyChanged("SelectedStudentCourseResults");
+            } catch 
             {
 
             }
-
         }
 
         void SetupCommands()
@@ -196,6 +222,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             GenerateReportCommand = new BaseCommand(GenerateReport);
             FilterChangedCommand = new BaseCommand(UpdateFilteredStudents);
 
+            AddRecordCommand = new BaseCommand(AddRecord);
             EditRecordCommand = new BaseCommand(EditRecord);
             DeleteRecordCommand = new BaseCommand(DeleteRecord);
 

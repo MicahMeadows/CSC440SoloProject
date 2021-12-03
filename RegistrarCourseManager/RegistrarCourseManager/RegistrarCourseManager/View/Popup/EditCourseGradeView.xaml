@@ -1,0 +1,194 @@
+﻿<UserControl
+    x:Class="RegistrarCourseManager.ViewModel.Popup.EditCourseGradeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RegistrarCourseManager.ViewModel.Popup"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="clr-namespace:RegistrarCourseManager.ViewModel.Popup"
+    d:DesignHeight="220"
+    d:DesignWidth="260"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Width="220"
+            Margin="0,15,0,0"
+            HorizontalAlignment="Center"
+            Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,20,0" HorizontalAlignment="Stretch">
+                    <Border
+                        Width="100"
+                        Margin="0,5"
+                        HorizontalAlignment="Stretch"
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1">
+                        <StackPanel>
+                            <Label
+                                Padding="0"
+                                HorizontalAlignment="Stretch"
+                                Background="#00000000"
+                                Content="Course Prefix"
+                                DockPanel.Dock="Bottom"
+                                FontSize="12"
+                                FontWeight="Light"
+                                Foreground="Black" />
+                            <TextBox
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                DockPanel.Dock="Bottom"
+                                FontSize="18"
+                                FontWeight="UltraLight"
+                                Foreground="Black"
+                                Text="{Binding ToEdit.CoursePrefix, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                TextAlignment="Left" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel>
+                    <Border
+                        Width="100"
+                        Margin="0,5"
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1">
+                        <StackPanel>
+                            <Label
+                                Padding="0"
+                                HorizontalAlignment="Stretch"
+                                Background="#00000000"
+                                Content="Course Num"
+                                DockPanel.Dock="Bottom"
+                                FontSize="12"
+                                FontWeight="Light"
+                                Foreground="Black" />
+                            <TextBox
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                DockPanel.Dock="Bottom"
+                                FontSize="18"
+                                FontWeight="UltraLight"
+                                Foreground="Black"
+                                Text="{Binding ToEdit.CourseNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                TextAlignment="Left" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,20,0" HorizontalAlignment="Stretch">
+                    <Border
+                        Width="100"
+                        Margin="0,5"
+                        HorizontalAlignment="Stretch"
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1">
+                        <StackPanel>
+                            <Label
+                                Padding="0"
+                                HorizontalAlignment="Stretch"
+                                Background="#00000000"
+                                Content="Semester"
+                                DockPanel.Dock="Bottom"
+                                FontSize="12"
+                                FontWeight="Light"
+                                Foreground="Black" />
+                            <TextBox
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                DockPanel.Dock="Bottom"
+                                FontSize="18"
+                                FontWeight="UltraLight"
+                                Foreground="Black"
+                                Text="{Binding ToEdit.Semester, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                TextAlignment="Left" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel>
+                    <Border
+                        Width="100"
+                        Margin="0,5"
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1">
+                        <StackPanel>
+                            <Label
+                                Padding="0"
+                                HorizontalAlignment="Stretch"
+                                Background="#00000000"
+                                Content="Year"
+                                DockPanel.Dock="Bottom"
+                                FontSize="12"
+                                FontWeight="Light"
+                                Foreground="Black" />
+                            <TextBox
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                DockPanel.Dock="Bottom"
+                                FontSize="18"
+                                FontWeight="UltraLight"
+                                Foreground="Black"
+                                Text="{Binding ToEdit.Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                TextAlignment="Left" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <Border
+                    Width="100"
+                    Margin="0,5"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,1">
+                    <StackPanel>
+                        <Label
+                            Padding="0"
+                            HorizontalAlignment="Stretch"
+                            Background="#00000000"
+                            Content="Grade"
+                            DockPanel.Dock="Bottom"
+                            FontSize="12"
+                            FontWeight="Light"
+                            Foreground="Black" />
+                        <TextBox
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            DockPanel.Dock="Bottom"
+                            FontSize="18"
+                            FontWeight="UltraLight"
+                            Foreground="Black"
+                            Text="{Binding ToEdit.Grade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            TextAlignment="Left" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <Button
+            Grid.Row="1"
+            Width="75"
+            Margin="0,8"
+            Background="{StaticResource maroonBackground}"
+            Command="{Binding SubmitCommand}"
+            Style="{StaticResource RoundButton}">
+            <Label
+                Content="Submit"
+                FontSize="12"
+                FontWeight="Light"
+                Foreground="White" />
+        </Button>
+    </Grid>
+</UserControl>

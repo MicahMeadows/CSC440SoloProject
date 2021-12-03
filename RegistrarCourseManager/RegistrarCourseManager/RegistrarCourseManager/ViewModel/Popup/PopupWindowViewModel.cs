@@ -1,8 +1,10 @@
-﻿using System;
+﻿using RegistrarCourseManager.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RegistrarCourseManager.ViewModel.Popup
 {
@@ -15,7 +17,7 @@ namespace RegistrarCourseManager.ViewModel.Popup
             get => popupViewModel;
             set
             {
-                PopupViewModel = value;
+                popupViewModel = value;
                 OnPropertyChanged("PopupViewMode");
             }
         }
@@ -42,10 +44,11 @@ namespace RegistrarCourseManager.ViewModel.Popup
             }
         }
 
-        public PopupWindowViewModel()
+        public PopupWindowViewModel(ViewModelBase popupContentViewModel, string title)
         {
             IconSource = "/RegistrarCourseManager;component/Images/file-plus.png";
-            Title = "popup";
+            Title = title;
+            PopupViewModel = popupContentViewModel;
         }
     }
 }

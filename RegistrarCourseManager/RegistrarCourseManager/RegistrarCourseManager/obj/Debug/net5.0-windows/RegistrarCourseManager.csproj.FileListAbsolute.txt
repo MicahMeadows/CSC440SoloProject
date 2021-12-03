@@ -40,3 +40,5 @@ C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseM
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\RegistrarCourseManager.genruntimeconfig.cache
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.g.cs
 C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\PopupWindow.baml
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\EditCourseGradeView.g.cs
+C:\Users\Micah\Desktop\CSC440SoloProject\RegistrarCourseManager\RegistrarCourseManager\RegistrarCourseManager\obj\Debug\net5.0-windows\View\Popup\EditCourseGradeView.baml

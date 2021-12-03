@@ -30,7 +30,11 @@ namespace RegistrarCourseManager.Model
                 Grade.Equals(dst.Grade) &&
                 Year == dst.Year &&
                 Semester.Equals(dst.Semester);
-            
+        }
+
+        public CourseGrade Copy()
+        {
+            return new CourseGrade(this.StudentID, this.CoursePrefix, this.CourseNum, this.Grade, this.Year, this.Semester);
         }
     }
 }

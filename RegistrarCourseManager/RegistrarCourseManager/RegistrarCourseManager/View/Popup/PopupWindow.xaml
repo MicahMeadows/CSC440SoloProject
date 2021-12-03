@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:RegistrarCourseManager.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:popupView="clr-namespace:RegistrarCourseManager.ViewModel.Popup"
     xmlns:popupViewmodel="clr-namespace:RegistrarCourseManager.ViewModel.Popup"
     Title="PopupWindow"
     AllowsTransparency="True"
@@ -14,9 +15,20 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
-    <Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type popupViewmodel:EditCourseGradeViewModel}">
+            <popupView:EditCourseGradeView />
+        </DataTemplate>
+        <!--<DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <view:LoginView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TabsViewModel}">
+            <view:TabsView />
+        </DataTemplate>-->
+    </Window.Resources>
+    <!--<Window.DataContext>
         <popupViewmodel:PopupWindowViewModel />
-    </Window.DataContext>
+    </Window.DataContext>-->
     <Border
         Width="260"
         Height="290"
