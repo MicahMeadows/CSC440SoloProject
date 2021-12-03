@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RegistrarCourseManager.Exceptions;
 
 namespace RegistrarCourseManager.Model.Repositories
 {
@@ -19,7 +20,16 @@ namespace RegistrarCourseManager.Model.Repositories
 
         public Course GetCourse(CourseGrade courseGrade)
         {
-            
+            var course = allCourses.First(course =>
+            course.CoursePrefix == courseGrade.CoursePrefix
+            && course.CourseNum == courseGrade.CourseNum
+            && course.Year == courseGrade.Year
+            && course.Semester == courseGrade.Semester);
+
+            if(course == null)
+                throw new CourseNotExistException("Course doesnt exist");
+
+            return course;
         }
     }
 }
