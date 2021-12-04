@@ -54,6 +54,7 @@ namespace RegistrarCourseManager.ViewModel
         {
             var authUser = new Account(Username, Password);
             if (accountRepository.Authenticate(authUser)){
+                RepositorySingleton.Instance.authUsername = authUser.Username;
                 mainViewModel.OpenTabsViewCommand.Execute(authUser);
             } else
             {

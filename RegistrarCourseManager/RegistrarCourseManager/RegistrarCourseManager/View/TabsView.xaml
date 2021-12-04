@@ -107,12 +107,24 @@
                     Margin="10"
                     RenderOptions.BitmapScalingMode="HighQuality"
                     Source="/RegistrarCourseManager;component/Images/eku-big-e.png" />
-                <Label
-                    VerticalAlignment="Center"
-                    Content="{Binding Welcome}"
-                    FontSize="18"
-                    FontWeight="Light"
-                    Foreground="White" />
+                <StackPanel Width="140" VerticalAlignment="Center">
+                    <Label
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Content="Welcome,"
+                        FontSize="18"
+                        FontWeight="Light"
+                        Foreground="White" />
+                    <Label
+                        Margin="10,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Content="{Binding Welcome}"
+                        FontSize="18"
+                        FontWeight="Light"
+                        Foreground="White" />
+                </StackPanel>
+
             </StackPanel>
 
             <StackPanel x:Name="stackPanelNavigationTabs" Grid.Row="2">

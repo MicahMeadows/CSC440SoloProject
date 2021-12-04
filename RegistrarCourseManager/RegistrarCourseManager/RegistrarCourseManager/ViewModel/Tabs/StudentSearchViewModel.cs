@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using RegistrarCourseManager.Commands;
 using RegistrarCourseManager.Model;
+using RegistrarCourseManager.Model.ReportGeneration;
 using RegistrarCourseManager.Model.Repositories;
 using RegistrarCourseManager.View;
 using RegistrarCourseManager.ViewModel.Popup;
@@ -17,6 +18,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         public IStudentRepository studentRepository;
         public IGradesRepository gradesRepository;
         public ICourseRepository courseRepository;
+        public IReportGenerator reportGenerator;
 
         public ICommand AddStudentCommand { get; set; }
         public ICommand EditStudentCommand { get; set; }
@@ -109,7 +111,10 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         void GenerateReport(object _)
         {
-            MessageBox.Show("generate report click");
+            if (SelectedStudent == null)
+                return;
+
+            reportGenerator.GenerateReport(SelectedStudent, courseRepository, gradesRepository);
         }
 
         bool StudentMatchesFilter(Student student)
@@ -301,6 +306,8 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         {
             SetupCommands();
             SetupRepositories();
+
+            reportGenerator = new PdfReportGenerator();
 
             students = studentRepository.GetStudents();
             UpdateFilteredStudents(null);

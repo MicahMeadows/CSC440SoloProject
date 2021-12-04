@@ -38,7 +38,7 @@ namespace RegistrarCourseManager.ViewModel
         }
         private void OpenTabsView(object obj)
         {
-            CurrentScreenViewModel = new TabsViewModel(obj as Account);
+            CurrentScreenViewModel = new TabsViewModel(/*obj as Account*/);
         }
 
 

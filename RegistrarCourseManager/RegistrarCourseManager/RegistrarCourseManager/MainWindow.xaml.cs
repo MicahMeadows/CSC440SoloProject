@@ -17,6 +17,11 @@ namespace RegistrarCourseManager
 
         private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            if (this.WindowState == WindowState.Maximized) {
+                this.Left = e.GetPosition(this).X - (this.Width / 2);
+                this.Top = 0;
+                this.WindowState = WindowState.Normal;
+            }
             this.DragMove();
         }
     }

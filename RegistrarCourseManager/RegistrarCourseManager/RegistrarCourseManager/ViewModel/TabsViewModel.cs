@@ -12,23 +12,23 @@ namespace RegistrarCourseManager.ViewModel
         {
             get
             {
-                return $"Welcome, {user.Username}";
+                return RepositorySingleton.Instance.authUsername;
             }
         }
 
-        private Account user;
-        public Account User
-        {
-            get
-            {
-                return user;
-            }
-            set
-            {
-                user = value;
-                OnPropertyChanged("User");
-            }
-        }
+        //private Account user;
+        //public Account User
+        //{
+        //    get
+        //    {
+        //        return user;
+        //    }
+        //    set
+        //    {
+        //        user = value;
+        //        OnPropertyChanged("User");
+        //    }
+        //}
 
         public ICommand MinimizeApplicationCommand { get; set; }
         public ICommand QuitApplicationCommand { get; set; }
@@ -104,9 +104,9 @@ namespace RegistrarCourseManager.ViewModel
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
 
-        public TabsViewModel(Account user)
+        public TabsViewModel(/*Account user*/)
         {
-            User = user;
+            //User = user;
 
             QuitApplicationCommand = new BaseCommand(quitApp);
             MinimizeApplicationCommand = new BaseCommand(minimizeApp);

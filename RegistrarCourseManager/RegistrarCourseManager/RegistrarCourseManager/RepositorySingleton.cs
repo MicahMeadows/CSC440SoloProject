@@ -17,6 +17,8 @@ namespace RegistrarCourseManager
 
         public string connectionString = "server=127.0.0.1;database=csc440solo;uid=root;";
 
+        public string authUsername;
+
         private static RepositorySingleton instance;
         public static RepositorySingleton Instance
         {

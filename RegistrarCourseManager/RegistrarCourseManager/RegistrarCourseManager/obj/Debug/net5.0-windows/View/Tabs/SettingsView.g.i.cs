@@ -61,7 +61,7 @@ namespace RegistrarCourseManager.View.Tabs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RegistrarCourseManager;V1.0.0.0;component/view/tabs/settingsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RegistrarCourseManager;component/view/tabs/settingsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\Tabs\SettingsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
