@@ -20,7 +20,7 @@ namespace RegistrarCourseManager.Model.Repositories
             
         }
 
-        public Course GetCourse(CourseGrade courseGrade)
+        public int GetCourseHours(CourseGrade courseGrade)
         {
             var course = allCourses.First(course =>
             course.CoursePrefix == courseGrade.CoursePrefix
@@ -31,7 +31,7 @@ namespace RegistrarCourseManager.Model.Repositories
             if(course == null)
                 throw new CourseNotExistException("Course doesnt exist");
 
-            return course;
+            return course.Hours;
         }
     }
 }

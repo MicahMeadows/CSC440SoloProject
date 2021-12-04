@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RegistrarCourseManager.Model.Repositories
 {
-    public interface ICourseRepository
+    public interface IAccountRepository
     {
-        public int GetCourseHours(CourseGrade courseGrade);
+        public bool Authenticate(Account account);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrarCourseManager.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,14 +26,9 @@ namespace RegistrarCourseManager.View
             InitializeComponent();
         }
 
-        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
+            (this.DataContext as LoginViewModel).Password = (sender as PasswordBox).Password;
         }
     }
 }

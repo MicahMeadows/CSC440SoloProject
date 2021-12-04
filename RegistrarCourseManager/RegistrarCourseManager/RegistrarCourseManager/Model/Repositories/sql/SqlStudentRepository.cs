@@ -14,7 +14,7 @@ namespace RegistrarCourseManager.Model.Repositories.sql
 {
     class SqlStudentRepository : IStudentRepository
     {
-        string connectionString = "server=127.0.0.1;database=csc440solo;uid=root;";
+        string connectionString = "";
 
         public void AddStudent(Student student)
         {
@@ -58,9 +58,9 @@ namespace RegistrarCourseManager.Model.Repositories.sql
             throw new NotImplementedException();
         }
 
-        public SqlStudentRepository()
+        public SqlStudentRepository(string connectionString)
         {
-
+            this.connectionString = connectionString;
         }
     }
 }

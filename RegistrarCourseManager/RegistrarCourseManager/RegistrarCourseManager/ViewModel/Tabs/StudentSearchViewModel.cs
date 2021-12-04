@@ -219,9 +219,10 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         {
             try
             {
-                return courseRepository.GetCourse(grade).Hours;
+                return courseRepository.GetCourseHours(grade);
             } catch (Exception e)
             {
+                // MessageBox.Show(e.Message);
                 return 0;
             }
 

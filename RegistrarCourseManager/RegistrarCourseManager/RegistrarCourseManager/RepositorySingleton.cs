@@ -13,6 +13,9 @@ namespace RegistrarCourseManager
         public IStudentRepository studentRepository;
         public IGradesRepository gradesRepository;
         public ICourseRepository courseRepository;
+        public IAccountRepository accountRepository;
+
+        public string connectionString = "server=127.0.0.1;database=csc440solo;uid=root;";
 
         private static RepositorySingleton instance;
         public static RepositorySingleton Instance
@@ -29,12 +32,15 @@ namespace RegistrarCourseManager
         private RepositorySingleton()
         {
             // studentRepository = new TestingStudentRepository();
-            studentRepository = new SqlStudentRepository();
+            studentRepository = new SqlStudentRepository(connectionString);
 
             // gradesRepository = new TestingGradesRepository();
-            gradesRepository = new SqlGradesRepository();
+            gradesRepository = new SqlGradesRepository(connectionString);
 
-            courseRepository = new TestingCourseRepository();
+            // courseRepository = new TestingCourseRepository();
+            courseRepository = new SqlCourseRepository(connectionString);
+
+            accountRepository = new SqlAccountRepository(connectionString);
         }
     }
 }

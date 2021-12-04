@@ -123,6 +123,7 @@
                         FontSize="18"
                         FontWeight="UltraLight"
                         Foreground="White"
+                        Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         TextAlignment="Left" />
                 </StackPanel>
             </Border>
@@ -144,7 +145,8 @@
                         BorderThickness="0"
                         FontSize="18"
                         FontWeight="UltraLight"
-                        Foreground="White" />
+                        Foreground="White"
+                        PasswordChanged="PasswordBox_PasswordChanged" />
                 </StackPanel>
             </Border>
 
@@ -154,7 +156,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
 
-                <CheckBox
+                <!--<CheckBox
                     VerticalAlignment="Center"
                     Background="Transparent"
                     BorderBrush="White"
@@ -163,18 +165,16 @@
                     DockPanel.Dock="Left"
                     FontSize="14"
                     FontWeight="Light"
-                    Foreground="White" />
+                    Foreground="White" />-->
 
 
                 <Button
                     Width="100"
                     Height="28"
                     HorizontalAlignment="Right"
-                    Click="Button_Click"
                     Command="{Binding LoginCommand}"
                     Content="Submit"
                     Cursor="Hand"
-                    MouseDown="Button_MouseDown"
                     Style="{StaticResource RoundOutlineButton}" />
             </DockPanel>
         </StackPanel>

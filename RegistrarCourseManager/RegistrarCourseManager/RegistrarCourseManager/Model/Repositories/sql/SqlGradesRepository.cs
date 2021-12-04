@@ -12,7 +12,12 @@ namespace RegistrarCourseManager.Model.Repositories.sql
 {
     class SqlGradesRepository : IGradesRepository
     {
-        string connectionString = "server=127.0.0.1;database=csc440solo;uid=root;";
+        string connectionString = "";
+
+        public SqlGradesRepository(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
 
         public void AddCourseGrade(CourseGrade grade)
         {
