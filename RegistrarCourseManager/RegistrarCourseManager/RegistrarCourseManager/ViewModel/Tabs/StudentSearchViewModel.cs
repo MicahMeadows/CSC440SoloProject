@@ -287,9 +287,9 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
         void SetupRepositories()
         {
-            studentRepository = new TestingStudentRepository();
-            gradesRepository = new TestingGradesRepository();
-            courseRepository = new TestingCourseRepository();
+            studentRepository = RepositorySingleton.Instance.studentRepository;
+            gradesRepository = RepositorySingleton.Instance.gradesRepository;
+            courseRepository = RepositorySingleton.Instance.courseRepository;
         }
 
         public StudentSearchViewModel()

@@ -15,25 +15,25 @@ namespace RegistrarCourseManager.Model.Repositories
 
         public TestingGradesRepository()
         {
-            AddCourseGrade(new CourseGrade("901901901", "CSC", 191, "A", 2020, "Spring"));
-            AddCourseGrade(new CourseGrade("901901901", "CSC", 360, "B", 2021, "Fall"));
-            AddCourseGrade(new CourseGrade("901901901", "MAT", 237, "C", 2021, "Spring"));
-            AddCourseGrade(new CourseGrade("901901901", "CSC", 190, "D", 2019, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901901", "CSC", 191, "A", 2020, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901901", "CSC", 360, "B", 2021, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901901", "MAT", 237, "C", 2021, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901901", "CSC", 190, "D", 2019, "Fall"));
 
-            AddCourseGrade(new CourseGrade("901901902", "CSC", 191, "B", 2020, "Spring"));
-            AddCourseGrade(new CourseGrade("901901902", "CSC", 360, "C", 2021, "Fall"));
-            AddCourseGrade(new CourseGrade("901901902", "MAT", 237, "D", 2021, "Spring"));
-            AddCourseGrade(new CourseGrade("901901902", "CSC", 190, "F", 2019, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901902", "CSC", 191, "B", 2020, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901902", "CSC", 360, "C", 2021, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901902", "MAT", 237, "D", 2021, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901902", "CSC", 190, "F", 2019, "Fall"));
 
-            AddCourseGrade(new CourseGrade("901901903", "CSC", 191, "B", 2020, "Spring"));
-            AddCourseGrade(new CourseGrade("901901903", "CSC", 360, "A", 2021, "Fall"));
-            AddCourseGrade(new CourseGrade("901901903", "MAT", 237, "B", 2021, "Spring"));
-            AddCourseGrade(new CourseGrade("901901903", "CSC", 190, "A", 2019, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901903", "CSC", 191, "B", 2020, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901903", "CSC", 360, "A", 2021, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901903", "MAT", 237, "B", 2021, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901903", "CSC", 190, "A", 2019, "Fall"));
 
-            AddCourseGrade(new CourseGrade("901901904", "CSC", 191, "C", 2020, "Spring"));
-            AddCourseGrade(new CourseGrade("901901904", "CSC", 360, "A", 2021, "Fall"));
-            AddCourseGrade(new CourseGrade("901901904", "MAT", 237, "B", 2021, "Spring"));
-            AddCourseGrade(new CourseGrade("901901904", "CSC", 190, "D", 2019, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901904", "CSC", 191, "C", 2020, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901904", "CSC", 360, "A", 2021, "Fall"));
+            //AddCourseGrade(new CourseGrade("901901904", "MAT", 237, "B", 2021, "Spring"));
+            //AddCourseGrade(new CourseGrade("901901904", "CSC", 190, "D", 2019, "Fall"));
         }
 
         public void AddCourseGrade(CourseGrade grade)
