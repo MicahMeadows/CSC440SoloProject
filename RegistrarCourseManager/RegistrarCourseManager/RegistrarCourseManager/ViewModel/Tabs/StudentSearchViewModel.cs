@@ -84,6 +84,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
                 if(SelectedStudent != null)
                 {
                     SelectedStudent.OverallGPA = CalculateGPA(selectedStudentCourseResults);
+                    studentRepository.UpdateStudent(SelectedStudent);
                     OnPropertyChanged("SelectedStudent.OverallGPA");
                 }
                 return selectedStudentCourseResults;
@@ -157,6 +158,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             await ShowPopup(popup);
 
             SelectedStudent.OverallGPA = CalculateGPA(SelectedStudentCourseResults);
+            studentRepository.UpdateStudent(SelectedStudent);
             UpdateSelectedStudentCourseResults();
             UpdateFilteredStudents(null);
             // UpdateGPA();
@@ -179,6 +181,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             await ShowPopup(popup);
 
             SelectedStudent.OverallGPA = CalculateGPA(SelectedStudentCourseResults);
+            studentRepository.UpdateStudent(SelectedStudent);
             UpdateSelectedStudentCourseResults();
             UpdateFilteredStudents(null);
         }

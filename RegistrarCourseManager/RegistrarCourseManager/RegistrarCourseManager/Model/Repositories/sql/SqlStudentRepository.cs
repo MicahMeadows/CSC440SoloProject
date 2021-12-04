@@ -55,7 +55,23 @@ namespace RegistrarCourseManager.Model.Repositories.sql
 
         public void UpdateStudent(Student student)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string query = $"UPDATE student SET OverallGPA = {student.OverallGPA} WHERE StudentID = @id";
+
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@id", student.StudentID);
+
+                connection.Open();
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         public SqlStudentRepository(string connectionString)

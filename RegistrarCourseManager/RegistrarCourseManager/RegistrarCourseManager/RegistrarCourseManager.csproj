@@ -4,12 +4,14 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>registrar-manager-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Database\dbkey.text" />
     <None Remove="Images\edit-pencil.png" />
     <None Remove="Images\edit-record.png" />
+    <None Remove="Images\ekico.ico" />
     <None Remove="Images\eku-big-e.png" />
     <None Remove="Images\file-minus.png" />
     <None Remove="Images\file-plus.png" />
@@ -22,6 +24,7 @@
     <None Remove="Images\plus-circle.png" />
     <None Remove="Images\profile-image-sample.png" />
     <None Remove="Images\question.png" />
+    <None Remove="Images\registrar-manager-icon.ico" />
     <None Remove="Images\settings.png" />
     <None Remove="Images\suspend-icon-black.png" />
     <None Remove="Images\suspend-icon.png" />
@@ -66,6 +69,7 @@
     <Resource Include="Database\dbkey.text" />
     <Resource Include="Images\edit-pencil.png" />
     <Resource Include="Images\edit-record.png" />
+    <Resource Include="Images\ekico.ico" />
     <Resource Include="Images\eku-big-e.png" />
     <Resource Include="Images\file-minus.png" />
     <Resource Include="Images\file-plus.png" />
@@ -78,6 +82,7 @@
     <Resource Include="Images\login-background.png" />
     <Resource Include="Images\minimize-icon.png" />
     <Resource Include="Images\question.png" />
+    <Resource Include="Images\registrar-manager-icon.ico" />
     <Resource Include="Images\settings.png" />
     <Resource Include="Images\suspend-icon-black.png" />
     <Resource Include="Images\suspend-icon.png" />
