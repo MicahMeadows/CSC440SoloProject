@@ -274,6 +274,8 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         {
             try
             {
+                if (SelectedStudent == null)
+                    return;
                 var courseGrades = gradesRepository.GetCourseGrades(SelectedStudent.StudentID);
 
                 SelectedStudentCourseResults = MakeCourseResults(courseGrades);
