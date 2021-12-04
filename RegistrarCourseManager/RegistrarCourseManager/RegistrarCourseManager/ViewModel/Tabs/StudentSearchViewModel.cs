@@ -265,7 +265,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         {
             try
             {
-                var courseGrades = gradesRepository.GetCourseGrades(SelectedStudent);
+                var courseGrades = gradesRepository.GetCourseGrades(SelectedStudent.StudentID);
 
                 SelectedStudentCourseResults = MakeCourseResults(courseGrades);
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrarCourseManager.Model.Repositories.sql;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,6 +14,6 @@ namespace RegistrarCourseManager
     /// </summary>
     public partial class App : Application
     {
-
+        // SqlStudentRepository s = new SqlStudentRepository();
     }
 }

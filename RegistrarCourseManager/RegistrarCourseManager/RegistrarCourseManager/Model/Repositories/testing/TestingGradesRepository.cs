@@ -71,14 +71,14 @@ namespace RegistrarCourseManager.Model.Repositories
             throw new NotImplementedException();
         }
 
-        public ObservableCollection<CourseGrade> GetCourseGrades(Student student)
+        public ObservableCollection<CourseGrade> GetCourseGrades(string studentId)
         {
-            if(student == null)
+            if(studentId == null || studentId == "")
             {
                 throw new ArgumentException("null student passed");
             }
 
-            List<CourseGrade> studentsGrades = allGrades.Where(grade => grade.StudentID == student.StudentID).ToList();
+            List<CourseGrade> studentsGrades = allGrades.Where(grade => grade.StudentID == studentId).ToList();
 
             return new ObservableCollection<CourseGrade>(studentsGrades);
         }

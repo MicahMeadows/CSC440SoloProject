@@ -1,4 +1,5 @@
 ﻿using RegistrarCourseManager.Model.Repositories;
+using RegistrarCourseManager.Model.Repositories.sql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +28,12 @@ namespace RegistrarCourseManager
         }
         private RepositorySingleton()
         {
-            studentRepository = new TestingStudentRepository();
-            gradesRepository = new TestingGradesRepository();
+            // studentRepository = new TestingStudentRepository();
+            studentRepository = new SqlStudentRepository();
+
+            // gradesRepository = new TestingGradesRepository();
+            gradesRepository = new SqlGradesRepository();
+
             courseRepository = new TestingCourseRepository();
         }
     }

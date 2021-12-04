@@ -9,7 +9,7 @@ namespace RegistrarCourseManager.Model.Repositories
 {
     public interface IGradesRepository
     {
-        public ObservableCollection<CourseGrade> GetCourseGrades(Student student);
+        public ObservableCollection<CourseGrade> GetCourseGrades(string studentId);
         public void DeleteCourseGrade(CourseGrade grade);
         public void AddCourseGrade(CourseGrade grade);
         public void EditCourseGrade(CourseGrade grade);
