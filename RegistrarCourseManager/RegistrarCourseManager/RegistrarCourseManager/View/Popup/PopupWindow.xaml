@@ -43,6 +43,7 @@
             </Grid.RowDefinitions>
 
             <Border
+                MouseDown="Border_MouseDown"
                 Background="{StaticResource maroonBackground}"
                 BorderBrush="{StaticResource maroonBackground}"
                 BorderThickness="0"

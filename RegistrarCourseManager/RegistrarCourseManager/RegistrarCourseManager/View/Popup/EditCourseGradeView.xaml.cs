@@ -135,12 +135,12 @@ namespace RegistrarCourseManager.ViewModel.Popup
                     {
                         try
                         {
-                            gradeRepository.AddCourseGrade(newCourseGrade);
                             gradeRepository.DeleteCourseGrade(courseGradeToChange);
+                            gradeRepository.AddCourseGrade(newCourseGrade);
                         }
                         catch
                         {
-                            MessageBox.Show("Failed to update");
+                            MessageBox.Show("Failed to update" + e.ToString());
                         }
                     }
                 }

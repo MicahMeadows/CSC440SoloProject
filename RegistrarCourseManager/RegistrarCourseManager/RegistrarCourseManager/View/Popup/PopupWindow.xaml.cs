@@ -23,5 +23,10 @@ namespace RegistrarCourseManager.View
         {
             InitializeComponent();
         }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
