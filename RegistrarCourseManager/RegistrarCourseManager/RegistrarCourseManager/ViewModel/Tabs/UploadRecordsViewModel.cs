@@ -20,6 +20,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
     class UploadRecordsViewModel : ViewModelBase
     {
         public IGradesRepository gradesRepository { get; set; }
+        public ICourseRepository courseRepository { get; set; }
 
         public ICommand BrowseFilesCommand { get; set; }
         public ICommand UploadFilesCommand { get; set; }

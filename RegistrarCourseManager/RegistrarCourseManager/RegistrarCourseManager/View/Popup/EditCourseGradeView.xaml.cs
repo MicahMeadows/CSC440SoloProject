@@ -88,6 +88,20 @@ namespace RegistrarCourseManager.ViewModel.Popup
             newCourseGrade.Grade = (sender as TextBox).Text;
         }
 
+
+        bool isValid(CourseGrade grade)
+        {
+            if (newCourseGrade.StudentID == ""
+                || newCourseGrade.CourseNum == 0
+                || newCourseGrade.CoursePrefix == ""
+                || newCourseGrade.Year == 0
+                || newCourseGrade.Semester == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void Button_SubmitClick(object sender, RoutedEventArgs e)
         {
             var oldG = courseGradeToChange;
@@ -96,37 +110,42 @@ namespace RegistrarCourseManager.ViewModel.Popup
             bool newAdd = courseGradeToChange == null;
 
             if(newAdd)
-            { 
-                try
+            {
+                if (isValid(newCourseGrade))
                 {
-                    gradeRepository.AddCourseGrade(newCourseGrade);
-                } catch
-                {
-                    MessageBox.Show("Grade already exist");
+                    try
+                    {
+                        gradeRepository.AddCourseGrade(newCourseGrade);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Grade already exist");
+                    }
                 }
-                popup.Close();
-                return;
             }
-            else if(courseGradeToChange.CompareTo(newCourseGrade) == 0)
+            else if (isValid(newCourseGrade))
             {
-                popup.Close();
-                return;
+                if (gradeRepository.CourseGradeExists(courseGradeToChange))
+                {
+                    if (newCourseGrade.Grade == courseGradeToChange.Grade)
+                    {
+                        MessageBox.Show("Record already exists");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            gradeRepository.AddCourseGrade(newCourseGrade);
+                            gradeRepository.DeleteCourseGrade(courseGradeToChange);
+                        }
+                        catch
+                        {
+                            popup.Close();
+                            MessageBox.Show("Failed to update");
+                        }
+                    }
+                }
             }
-            else if(gradeRepository.CourseGradeExists(newCourseGrade))
-            {
-                MessageBox.Show("Record already exists");
-                popup.Close();
-                return;
-            }
-            try
-            {
-                gradeRepository.AddCourseGrade(newCourseGrade);
-                gradeRepository.DeleteCourseGrade(courseGradeToChange);
-            } catch
-            {
-                MessageBox.Show("Failed to update");
-            }
-            
             popup.Close();
         }
     }

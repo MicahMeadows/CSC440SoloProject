@@ -9,9 +9,9 @@ namespace RegistrarCourseManager.Model.Repositories
 
         public TestingStudentRepository()
         {
-            students.Add(new Student(Name: "Micah", StudentID: "901901901", OverallGPA: 2.36));
-            students.Add(new Student(Name: "John", StudentID: "901901902", OverallGPA: 1.36));
-            students.Add(new Student(Name: "Toby", StudentID: "901901903", OverallGPA: 3.5));
+            students.Add(new Student(Name: "Micah", StudentID: "901901901", OverallGPA: 0));
+            students.Add(new Student(Name: "John", StudentID: "901901902", OverallGPA: 0));
+            students.Add(new Student(Name: "Toby", StudentID: "901901903", OverallGPA: 0));
         }
 
         public void AddStudent(Student student)

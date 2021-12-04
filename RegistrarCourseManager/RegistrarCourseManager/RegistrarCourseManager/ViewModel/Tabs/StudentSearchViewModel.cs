@@ -97,7 +97,9 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         private ObservableCollection<Student> filteredStudents;
         public ObservableCollection<Student> FilteredStudents
         {
-            get => filteredStudents;
+            get {
+                return filteredStudents;
+            }
             set
             {
                 filteredStudents = value;
@@ -121,6 +123,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
         void UpdateFilteredStudents(object _)
         {
             FilteredStudents = new ObservableCollection<Student>(students.Where(student => StudentMatchesFilter(student)));
+            OnPropertyChanged("FilteredStudents");
         }
 
         void submitEditRecord(object _)
@@ -150,14 +153,15 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
             SelectedStudent.OverallGPA = CalculateGPA(SelectedStudentCourseResults);
             UpdateSelectedStudentCourseResults();
-            UpdateGPA();
-
-        }
-
-        void UpdateGPA()
-        {
             UpdateFilteredStudents(null);
+            // UpdateGPA();
+
         }
+
+        //void UpdateGPA()
+        //{
+        //    UpdateFilteredStudents(null);
+        //}
 
         async void AddRecord(object _)
         {
@@ -171,7 +175,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
             SelectedStudent.OverallGPA = CalculateGPA(SelectedStudentCourseResults);
             UpdateSelectedStudentCourseResults();
-            UpdateGPA();
+            UpdateFilteredStudents(null);
         }
 
         void DeleteRecord(object _)
@@ -185,7 +189,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
             {
                 MessageBox.Show(e.ToString());
             }
-            UpdateGPA();
+            UpdateFilteredStudents(null);
         }
 
         void EditStudent(object _)
@@ -268,7 +272,7 @@ namespace RegistrarCourseManager.ViewModel.Tabs
                 OnPropertyChanged("SelectedStudentCourseResults");
             } catch 
             {
-                MessageBox.Show("Failed to update results");
+                // MessageBox.Show("Failed to update results");
             }
         }
 

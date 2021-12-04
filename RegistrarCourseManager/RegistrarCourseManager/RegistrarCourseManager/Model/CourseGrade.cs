@@ -31,9 +31,9 @@ namespace RegistrarCourseManager.Model
             bool cNum = CourseNum.Equals(dst.CourseNum);
             bool year = Year.Equals(dst.Year);
             bool semester = Semester.Equals(dst.Semester);
-            bool grade = Grade.Equals(dst.Grade);
+            //bool grade = Grade.Equals(dst.Grade);
 
-            return id && prefix && cNum && year && semester && grade ? 0 : -1;
+            return id && prefix && cNum && year && semester /*&& grade*/ ? 0 : -1;
         }
 
         //public override bool Equals(object obj)
