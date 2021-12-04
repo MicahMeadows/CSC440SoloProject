@@ -49,6 +49,7 @@ namespace RegistrarCourseManager.Model.ReportGeneration
                     cFrag.TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
                     page.Paragraphs.Add(cFrag);
                 }
+                page.Paragraphs.Add(new TextFragment());
             }
         }
 
@@ -65,8 +66,8 @@ namespace RegistrarCourseManager.Model.ReportGeneration
 
             page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(student.StudentID));
             page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment($"GPA: {student.OverallGPA.ToString()}"));
+            page.Paragraphs.Add(new TextFragment());
 
-            
 
             ObservableCollection<CourseGrade> studentsGrades = gradesRepository.GetCourseGrades(student.StudentID);
 
@@ -82,8 +83,8 @@ namespace RegistrarCourseManager.Model.ReportGeneration
             {
                 List<CourseGrade> gradesThisYear = studentsGrades.Where(cGrade => cGrade.Year == year).ToList();
 
-                makeSemester("Fpring", gradesThisYear, year, page, courseRepository);
-                makeSemester("Fummer", gradesThisYear, year, page, courseRepository);
+                makeSemester("Spring", gradesThisYear, year, page, courseRepository);
+                makeSemester("Summer", gradesThisYear, year, page, courseRepository);
                 makeSemester("Fall", gradesThisYear, year, page, courseRepository);
                 makeSemester("Winter", gradesThisYear, year, page, courseRepository);
 

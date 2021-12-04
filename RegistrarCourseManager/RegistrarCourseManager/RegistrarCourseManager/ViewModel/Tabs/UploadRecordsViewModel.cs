@@ -93,24 +93,6 @@ namespace RegistrarCourseManager.ViewModel.Tabs
 
                                         Console.WriteLine($"{studentName} {studentId} {gradeLetter}");
 
-                                        //Student newStudent = new Student()
-                                        //{
-                                        //    Name = studentName,
-                                        //    Id = studentId
-                                        //};
-
-                                        // AddStudentIfNotExists(newStudent);
-
-                                        //Grade newGrade = new Grade()
-                                        //{
-                                        //    StudentId = studentId,
-                                        //    CoursePrefix = coursePrefix,
-                                        //    CourseNum = courseNum,
-                                        //    Year = year,
-                                        //    Semester = semester,
-                                        //    Letter = gradeLetter
-                                        //};
-
                                         CourseGrade grade = new CourseGrade(studentId, coursePrefix, int.Parse(courseNum), gradeLetter, int.Parse(year), semester);
 
                                         try
@@ -121,7 +103,6 @@ namespace RegistrarCourseManager.ViewModel.Tabs
                                         {
                                             Console.WriteLine("grade already exists");
                                         }
-                                        // AddGradeIfNotExists(newGrade);
                                     }
                                 } while (reader.NextResult());
                             }

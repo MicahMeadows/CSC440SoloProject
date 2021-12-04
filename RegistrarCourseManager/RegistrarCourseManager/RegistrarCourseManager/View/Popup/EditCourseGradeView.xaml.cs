@@ -119,7 +119,7 @@ namespace RegistrarCourseManager.ViewModel.Popup
                     }
                     catch
                     {
-                        MessageBox.Show("Grade already exist");
+                        MessageBox.Show("Record already exist");
                     }
                 }
             }
@@ -140,7 +140,6 @@ namespace RegistrarCourseManager.ViewModel.Popup
                         }
                         catch
                         {
-                            popup.Close();
                             MessageBox.Show("Failed to update");
                         }
                     }

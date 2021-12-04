@@ -109,6 +109,7 @@
                     Source="/RegistrarCourseManager;component/Images/eku-big-e.png" />
                 <StackPanel Width="140" VerticalAlignment="Center">
                     <Label
+                        Padding="0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Content="Welcome,"
@@ -117,6 +118,7 @@
                         Foreground="White" />
                     <Label
                         Margin="10,0"
+                        Padding="0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Content="{Binding Welcome}"
@@ -129,15 +131,16 @@
 
             <StackPanel x:Name="stackPanelNavigationTabs" Grid.Row="2">
                 <custom:TabButton
-                    Title="Upload Records"
-                    Command="{Binding OpenUploadCourseRecordsTabCommand}"
-                    IconPath="/RegistrarCourseManager;component/Images/plus-circle.png"
-                    Selected="{Binding CourseRecordUploadTabSelected, Mode=TwoWay}" />
-                <custom:TabButton
                     Title="Student Search"
                     Command="{Binding OpenStudentSearchTabCommand}"
                     IconPath="/RegistrarCourseManager;component/Images/edit-record.png"
                     Selected="{Binding StudentSearchTabSelected, Mode=TwoWay}" />
+                <custom:TabButton
+                    Title="Upload Records"
+                    Command="{Binding OpenUploadCourseRecordsTabCommand}"
+                    IconPath="/RegistrarCourseManager;component/Images/plus-circle.png"
+                    Selected="{Binding CourseRecordUploadTabSelected, Mode=TwoWay}" />
+
                 <custom:TabButton
                     Title="Settings"
                     Command="{Binding OpenSettingsTabCommand}"

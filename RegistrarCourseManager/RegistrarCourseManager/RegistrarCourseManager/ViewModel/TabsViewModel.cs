@@ -115,7 +115,8 @@ namespace RegistrarCourseManager.ViewModel
             OpenStudentSearchTabCommand = new BaseCommand(OpenStudentSearchTab);
             OpenSettingsTabCommand = new BaseCommand(OpenSettingsTab);
 
-            OpenUploadCourseRecordsTabCommand.Execute(null);
+            // OpenUploadCourseRecordsTabCommand.Execute(null);
+            OpenStudentSearchTabCommand.Execute(null);
         }
 
         void OpenUploadCourseRecordsTab(object _)
