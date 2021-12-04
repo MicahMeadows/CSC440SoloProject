@@ -52,8 +52,9 @@ namespace RegistrarCourseManager.ViewModel
 
         void Login(object _)
         {
-            if (accountRepository.Authenticate(new Account(Username, Password))){
-                mainViewModel.OpenTabsViewCommand.Execute(null);
+            var authUser = new Account(Username, Password);
+            if (accountRepository.Authenticate(authUser)){
+                mainViewModel.OpenTabsViewCommand.Execute(authUser);
             } else
             {
                 MessageBox.Show($"Invalid login user:{Username} pass:{Password}");

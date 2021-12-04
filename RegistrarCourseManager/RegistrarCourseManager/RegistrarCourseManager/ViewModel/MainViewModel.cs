@@ -1,4 +1,5 @@
 ﻿using RegistrarCourseManager.Commands;
+using RegistrarCourseManager.Model;
 using System.Windows.Input;
 
 namespace RegistrarCourseManager.ViewModel
@@ -35,9 +36,9 @@ namespace RegistrarCourseManager.ViewModel
         {
             CurrentScreenViewModel = new LoginViewModel(this);
         }
-        private void OpenTabsView(object _)
+        private void OpenTabsView(object obj)
         {
-            CurrentScreenViewModel = new TabsViewModel();
+            CurrentScreenViewModel = new TabsViewModel(obj as Account);
         }
 
 

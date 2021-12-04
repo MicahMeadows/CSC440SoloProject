@@ -1,12 +1,35 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 using RegistrarCourseManager.Commands;
+using RegistrarCourseManager.Model;
 using RegistrarCourseManager.ViewModel.Tabs;
 
 namespace RegistrarCourseManager.ViewModel
 {
     class TabsViewModel : ViewModelBase
     {
+        public string Welcome
+        {
+            get
+            {
+                return $"Welcome, {user.Username}";
+            }
+        }
+
+        private Account user;
+        public Account User
+        {
+            get
+            {
+                return user;
+            }
+            set
+            {
+                user = value;
+                OnPropertyChanged("User");
+            }
+        }
+
         public ICommand MinimizeApplicationCommand { get; set; }
         public ICommand QuitApplicationCommand { get; set; }
         public ICommand OpenUploadCourseRecordsTabCommand { get; set; }
@@ -81,8 +104,10 @@ namespace RegistrarCourseManager.ViewModel
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
 
-        public TabsViewModel()
+        public TabsViewModel(Account user)
         {
+            User = user;
+
             QuitApplicationCommand = new BaseCommand(quitApp);
             MinimizeApplicationCommand = new BaseCommand(minimizeApp);
 

@@ -107,12 +107,12 @@
                     Margin="10"
                     RenderOptions.BitmapScalingMode="HighQuality"
                     Source="/RegistrarCourseManager;component/Images/eku-big-e.png" />
-                <!--<Label
+                <Label
                     VerticalAlignment="Center"
-                    Content="Registrar System"
+                    Content="{Binding Welcome}"
                     FontSize="18"
                     FontWeight="Light"
-                    Foreground="White" />-->
+                    Foreground="White" />
             </StackPanel>
 
             <StackPanel x:Name="stackPanelNavigationTabs" Grid.Row="2">
@@ -127,9 +127,9 @@
                     IconPath="/RegistrarCourseManager;component/Images/edit-record.png"
                     Selected="{Binding StudentSearchTabSelected, Mode=TwoWay}" />
                 <custom:TabButton
-                    Title="Info"
+                    Title="Settings"
                     Command="{Binding OpenSettingsTabCommand}"
-                    IconPath="/RegistrarCourseManager;component/Images/help-circle.png"
+                    IconPath="/RegistrarCourseManager;component/Images/settings.png"
                     Selected="{Binding SettingsTabSelected, Mode=TwoWay}" />
             </StackPanel>
         </Grid>
